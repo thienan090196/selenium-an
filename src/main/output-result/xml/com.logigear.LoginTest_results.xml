@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Test Suite"
+           tests="2"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="20.565">
+  <properties />
+  
+  
+            <testcase name="TC01" time="3.957" classname="com.logigear.LoginTest" />
+                <testcase name="TC02" time="16.608" classname="com.logigear.LoginTest" />
+      
+</testsuite>
