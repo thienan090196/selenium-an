@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuite name="Test Suite"
-           tests="2"
+           tests="5"
            failures="0"
            errors="0"
            skipped="0"
-           time="20.565">
+           time="33.691">
   <properties />
   
   
-            <testcase name="TC01" time="3.957" classname="com.logigear.LoginTest" />
-                <testcase name="TC02" time="16.608" classname="com.logigear.LoginTest" />
+            <testcase name="TC02" time="1.594" classname="com.logigear.LoginTest" />
+                <testcase name="TC04" time="1.689" classname="com.logigear.LoginTest" />
+                <testcase name="TC01" time="3.289" classname="com.logigear.LoginTest" />
+                <testcase name="TC03" time="25.540" classname="com.logigear.LoginTest" />
+                <testcase name="TC05" time="1.579" classname="com.logigear.LoginTest" />
       
 </testsuite>

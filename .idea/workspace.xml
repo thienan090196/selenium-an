@@ -5,8 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ac6ee06d-86b0-4a92-809b-47cb60452138" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/logigear/helper/Constant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/logigear/helper/Constant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/output-result/html/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/output-result/html/overview.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/output-result/html/reportng.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/output-result/html/reportng.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/output-result/html/sorttable.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/output-result/html/suite1_test1_results.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/output-result/html/suites.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/output-result/xml/com.logigear.LoginTest_results.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/testng.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/logigear/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/logigear/BaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/logigear/LoginTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/logigear/LoginTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +57,6 @@
   </component>
   <component name="RunManager">
     <configuration name="TestSuite" type="TestNG">
-      <module name="selenium_an" />
       <shortenClasspath name="NONE" />
       <useClassPathOnly />
       <option name="SUITE_NAME" value="$PROJECT_DIR$/src/main/resources/testng.xml" />
@@ -55,7 +66,7 @@
       <option name="GROUP_NAME" value="" />
       <option name="TEST_OBJECT" value="SUITE" />
       <option name="PARAMETERS" value="" />
-      <option name="OUTPUT_DIRECTORY" value="C:\Users\SATTDN21.01.01\Desktop\Selenium\selenium_an\src\main\output-result" />
+      <option name="OUTPUT_DIRECTORY" value="C:\Users\thien\Desktop\Selenium\selenium-an\src\main\output-result" />
       <option name="PROPERTIES_FILE" value="" />
       <properties />
       <listeners />
@@ -85,6 +96,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
