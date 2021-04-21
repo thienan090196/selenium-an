@@ -1,112 +1,66 @@
 package com.logigear.page_objects;
 
-import com.logigear.helper.Constant;
+import com.logigear.helper.element_helper.Tab;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 
 public class BasePage {
 
-    //Locators
-    private final By tabHome = By.cssSelector("a[href='../']");
-    private final By tabFAQ = By.cssSelector("a[href='/Page/FAQ.cshtml']");
-    private final By tabContact = By.cssSelector("a[href='/Page/Contact.cshtml']");
-    private final By tabTimetable = By.cssSelector("a[href='TrainTimeListPage.cshtml']");
-    private final By tabTicketPrice = By.cssSelector("a[href='/Page/TrainPriceListPage.cshtml']");
-    private final By tabBookTicket = By.cssSelector("a[href='/Page/BookTicketPage.cshtml']");
-    private final By tabMyTicket = By.cssSelector("a[href='/Page/ManageTicket.cshtml']");
-    private final By tabChangePassword = By.cssSelector("a[href='/Account/ChangePassword.cshtml']");
-    private final By tabRegister = By.cssSelector("a[href='/Account/Register.cshtml']");
-    private final By tabLogin = By.cssSelector("a[href='/Account/Login.cshtml']");
-    private final By tabLogout = By.cssSelector("a[href='/Account/Logout']");
-
     //Elements
-    protected WebElement getTabHome() {
-        return Constant.WEB_DRIVER.findElement(tabHome);
-    }
-
-    protected WebElement getTabFAQ() {
-        return Constant.WEB_DRIVER.findElement(tabFAQ);
-    }
-
-    protected WebElement getTabContact() {
-        return Constant.WEB_DRIVER.findElement(tabContact);
-    }
-
-    protected WebElement getTabTimetable() {
-        return Constant.WEB_DRIVER.findElement(tabTimetable);
-    }
-
-    protected WebElement getTabTicketPrice() {
-        return Constant.WEB_DRIVER.findElement(tabTicketPrice);
-    }
-
-    protected WebElement getTabBookTicket() {
-        return Constant.WEB_DRIVER.findElement(tabBookTicket);
-    }
-
-    protected WebElement getTabMyTicket() {
-        return Constant.WEB_DRIVER.findElement(tabMyTicket);
-    }
-
-    protected WebElement getTabChangePassword() {
-        return Constant.WEB_DRIVER.findElement(tabChangePassword);
-    }
-
-    protected WebElement getTabRegister() {
-        return Constant.WEB_DRIVER.findElement(tabRegister);
-    }
-
-    protected WebElement getTabLogin() {
-        return Constant.WEB_DRIVER.findElement(tabLogin);
-    }
-
-    protected WebElement getTabLogout() {
-        return Constant.WEB_DRIVER.findElement(tabLogout);
-    }
+    private final Tab tabHome = new Tab(By.cssSelector("a[href='../']"));
+    private final Tab tabFAQ = new Tab(By.cssSelector("a[href='/Page/FAQ.cshtml']"));
+    private final Tab tabContact = new Tab(By.cssSelector("a[href='/Page/Contact.cshtml']"));
+    private final Tab tabTimetable = new Tab(By.cssSelector("a[href='TrainTimeListPage.cshtml']"));
+    private final Tab tabTicketPrice = new Tab(By.cssSelector("a[href='/Page/TrainPriceListPage.cshtml']"));
+    private final Tab tabBookTicket = new Tab(By.cssSelector("a[href='/Page/BookTicketPage.cshtml']"));
+    private final Tab tabMyTicket = new Tab(By.cssSelector("a[href='/Page/ManageTicket.cshtml']"));
+    private final Tab tabChangePassword = new Tab(By.cssSelector("a[href='/Account/ChangePassword.cshtml']"));
+    private final Tab tabRegister = new Tab(By.cssSelector("a[href='/Account/Register.cshtml']"));
+    private final Tab tabLogin = new Tab(By.cssSelector("a[href='/Account/Login.cshtml']"));
+    private final Tab tabLogout = new Tab(By.cssSelector("a[href='/Account/Logout']"));
 
     //Methods
     public void goToHomePage() {
-        this.getTabHome().click();
+        this.tabHome.click();
     }
 
     public void goToFAQPage() {
-        this.getTabFAQ().click();
+        this.tabFAQ.click();
     }
 
     public void goToContactPage() {
-        this.getTabContact().click();
+        this.tabContact.click();
     }
 
     public void goToTimetablePage() {
-        this.getTabTimetable().click();
+        this.tabTimetable.click();
     }
 
     public void goToTicketPricePage() {
-        this.getTabTicketPrice().click();
+        this.tabTicketPrice.click();
     }
 
     public void goToBookTicketPage() {
-        this.getTabBookTicket().click();
+        this.tabBookTicket.click();
     }
 
     public void goToMyTicketPage() {
-        this.getTabMyTicket().click();
+        this.tabMyTicket.click();
     }
 
     public void goToChangePasswordPage() {
-        this.getTabChangePassword().click();
+        this.tabChangePassword.click();
     }
 
     public void goToRegisterPage() {
-        this.getTabRegister().click();
+        this.tabRegister.click();
     }
 
     public void goToLoginPage() {
-        this.getTabLogin().click();
+        this.tabLogin.click();
     }
 
     public void logout() {
-        this.getTabLogout().click();
+        this.tabLogout.click();
     }
 
 }

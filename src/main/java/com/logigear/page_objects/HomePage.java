@@ -1,22 +1,16 @@
 package com.logigear.page_objects;
 
-import com.logigear.helper.Constant;
+import com.logigear.helper.element_helper.Label;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 
 public class HomePage extends BasePage {
 
-    //Locators
-    private final By lblWelcomeMessage = By.xpath("//div[@class = 'account']//strong");
-
     //Elements
-    protected WebElement getLblWelcomeMessage() {
-        return Constant.WEB_DRIVER.findElement(lblWelcomeMessage);
-    }
+    private final Label lblWelcomeMessage = new Label(By.xpath("//div[@class = 'account']//strong"));
 
     //Methods
     public String getWelcomeMessage() {
-        return this.getLblWelcomeMessage().getText();
+        return this.lblWelcomeMessage.getText();
     }
 
 }
