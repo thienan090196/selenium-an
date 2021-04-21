@@ -5,20 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ac6ee06d-86b0-4a92-809b-47cb60452138" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/logigear/helper/element_helper/BaseElement.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/logigear/helper/Constant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/logigear/helper/Constant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/output-result/html/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/output-result/html/overview.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/output-result/html/reportng.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/output-result/html/reportng.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/output-result/html/sorttable.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/output-result/html/suite1_test1_results.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/output-result/html/suites.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/output-result/xml/com.logigear.LoginTest_results.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/testng.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/logigear/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/logigear/BaseTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/logigear/LoginTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/logigear/LoginTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/logigear/helper/element_helper/Element.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/logigear/page_objects/BasePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/logigear/page_objects/BasePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/logigear/page_objects/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/logigear/page_objects/HomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/logigear/page_objects/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/logigear/page_objects/LoginPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/logigear/page_objects/RegisterConfirmPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/logigear/page_objects/RegisterConfirmPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/output-result/html/overview.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/output-result/html/overview.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/output-result/html/suite1_test1_results.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/output-result/html/suite1_test1_results.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/output-result/xml/com.logigear.LoginTest_results.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/output-result/xml/com.logigear.LoginTest_results.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +51,25 @@
       <recent name="C:\Users\SATTDN21.01.01\Desktop\Selenium\selenium_an\src\main\java\com\logigear\helper\web_driver_helper" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="TestNG.TestSuite">
+    <configuration name="LoginTest.TC01" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="selenium-an" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.logigear.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.logigear" />
+      <option name="MAIN_CLASS_NAME" value="com.logigear.LoginTest" />
+      <option name="METHOD_NAME" value="TC01" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TestSuite" type="TestNG">
       <shortenClasspath name="NONE" />
       <useClassPathOnly />
@@ -74,6 +88,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="TestNG.LoginTest.TC01" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">

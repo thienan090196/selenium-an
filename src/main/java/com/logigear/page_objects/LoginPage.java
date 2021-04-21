@@ -1,61 +1,37 @@
 package com.logigear.page_objects;
 
-import com.logigear.helper.Constant;
+import com.logigear.helper.element_helper.Button;
+import com.logigear.helper.element_helper.Label;
+import com.logigear.helper.element_helper.TextBox;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 
 public class LoginPage extends BasePage {
 
-    //Locators
-    private final By txtEmail = By.cssSelector("input#username");
-    private final By txtPassword = By.cssSelector("input#password");
-    private final By btnLogin = By.cssSelector("input[title='Login']");
-    private final By lblGeneralErrorMessage = By.xpath("//p[contains(@class, 'message')]");
-    private final By lblEmailErrorMessage = By.xpath("//label[@for='username' and @class = 'validation-error']");
-    private final By lblPasswordErrorMessage = By.xpath("//label[@for='password' and @class = 'validation-error']");
-
     //Elements
-    protected WebElement getTxtEmail() {
-        return Constant.WEB_DRIVER.findElement(txtEmail);
-    }
-
-    protected WebElement getTxtPassword() {
-        return Constant.WEB_DRIVER.findElement(txtPassword);
-    }
-
-    protected WebElement getBtnLogin() {
-        return Constant.WEB_DRIVER.findElement(btnLogin);
-    }
-
-    protected WebElement getLblGeneralErrorMessage() {
-        return Constant.WEB_DRIVER.findElement(lblGeneralErrorMessage);
-    }
-
-    protected WebElement getLblEmailErrorMessage() {
-        return Constant.WEB_DRIVER.findElement(lblEmailErrorMessage);
-    }
-
-    protected WebElement getLblPasswordErrorMessage() {
-        return Constant.WEB_DRIVER.findElement(lblPasswordErrorMessage);
-    }
+    private final TextBox txtEmail = new TextBox(By.cssSelector("input#username"));
+    private final TextBox txtPassword = new TextBox(By.cssSelector("input#password"));
+    private final Button btnLogin = new Button(By.cssSelector("input[title='Login']"));
+    private final Label lblGeneralErrorMessage = new Label(By.xpath("//p[contains(@class, 'message')]"));
+    private final Label lblEmailErrorMessage = new Label(By.xpath("//label[@for='username' and @class = 'validation-error']"));
+    private final Label lblPasswordErrorMessage = new Label(By.xpath("//label[@for='password' and @class = 'validation-error']"));
 
     //Methods
     public void login(String email, String password) {
-        this.getTxtEmail().sendKeys(email);
-        this.getTxtPassword().sendKeys(password);
-        this.getBtnLogin().click();
+        this.txtEmail.enterText(email);
+        this.txtPassword.enterText(password);
+        this.btnLogin.click();
     }
 
     public String getGeneralErrorMessage() {
-        return this.getLblGeneralErrorMessage().getText();
+        return this.lblGeneralErrorMessage.getText();
     }
 
     public String getEmailErrorMessage() {
-        return this.getLblEmailErrorMessage().getText();
+        return this.lblEmailErrorMessage.getText();
     }
 
     public String getPasswordErrorMessage() {
-        return this.getLblPasswordErrorMessage().getText();
+        return this.lblPasswordErrorMessage.getText();
     }
 
 }
