@@ -5,16 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ac6ee06d-86b0-4a92-809b-47cb60452138" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/logigear/helper/element_helper/BaseElement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/logigear/tests/LoginTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/logigear/helper/element_helper/Element.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/logigear/helper/Common.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/logigear/helper/Common.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/logigear/helper/Constant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/logigear/helper/Constant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/logigear/helper/ErrorMessage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/logigear/helper/element_helper/BaseElement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/logigear/helper/element_helper/BaseElement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/logigear/helper/element_helper/Button.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/logigear/helper/element_helper/Button.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/logigear/helper/element_helper/Label.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/logigear/helper/element_helper/Label.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/logigear/helper/element_helper/Tab.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/logigear/helper/element_helper/Tab.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/logigear/helper/element_helper/TextBox.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/logigear/helper/element_helper/TextBox.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/logigear/page_objects/BasePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/logigear/page_objects/BasePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/logigear/page_objects/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/logigear/page_objects/HomePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/logigear/page_objects/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/logigear/page_objects/LoginPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/logigear/page_objects/RegisterConfirmPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/logigear/page_objects/RegisterConfirmPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/output-result/html/overview.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/output-result/html/overview.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/logigear/page_objects/RegisterPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/logigear/page_objects/RegisterPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/output-result/html/suite1_test1_results.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/output-result/html/suite1_test1_results.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/output-result/xml/com.logigear.LoginTest_results.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/output-result/xml/com.logigear.LoginTest_results.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/testng.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/logigear/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/logigear/tests/BaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/logigear/LoginTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/logigear/RegisterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/logigear/tests/RegisterTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,26 +51,34 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/output-result" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/src/test/java/com/logigear" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/logigear/page_objects" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\SATTDN21.01.01\Desktop\Selenium\selenium-an\src\main\java\com\logigear\page_objects" />
       <recent name="C:\Users\SATTDN21.01.01\Desktop\Selenium\selenium_an\src\main\resources" />
       <recent name="C:\Users\SATTDN21.01.01\Desktop\Selenium\selenium_an\src\main\java\com\logigear\helper\web_driver_helper" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.logigear.models" />
+    </key>
   </component>
-  <component name="RunManager" selected="TestNG.TestSuite">
-    <configuration name="LoginTest.TC01" type="TestNG" temporary="true" nameIsGenerated="true">
+  <component name="RunManager">
+    <configuration name="RegisterTest.TC01" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="selenium-an" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.logigear.*" />
+          <option name="PATTERN" value="com.logigear.tests.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.logigear" />
-      <option name="MAIN_CLASS_NAME" value="com.logigear.LoginTest" />
+      <option name="MAIN_CLASS_NAME" value="com.logigear.tests.RegisterTest" />
       <option name="METHOD_NAME" value="TC01" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
@@ -90,7 +107,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.LoginTest.TC01" />
+        <item itemvalue="TestNG.RegisterTest.TC01 (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -110,7 +127,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="an" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>

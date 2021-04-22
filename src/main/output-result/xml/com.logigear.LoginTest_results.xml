@@ -8,10 +8,10 @@
   <properties />
   
   
-            <testcase name="TC02" time="13.517" classname="com.logigear.LoginTest" />
-                <testcase name="TC04" time="6.144" classname="com.logigear.LoginTest" />
-                <testcase name="TC01" time="3.789" classname="com.logigear.LoginTest" />
-                <testcase name="TC03" time="5.907" classname="com.logigear.LoginTest" />
-                <testcase name="TC05" time="1.780" classname="com.logigear.LoginTest" />
+            <testcase name="TC02" time="13.517" classname="com.logigear.tests.LoginTest" />
+                <testcase name="TC04" time="6.144" classname="com.logigear.tests.LoginTest" />
+                <testcase name="TC01" time="3.789" classname="com.logigear.tests.LoginTest" />
+                <testcase name="TC03" time="5.907" classname="com.logigear.tests.LoginTest" />
+                <testcase name="TC05" time="1.780" classname="com.logigear.tests.LoginTest" />
       
 </testsuite>

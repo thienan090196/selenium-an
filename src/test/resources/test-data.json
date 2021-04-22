@@ -1,0 +1,54 @@
+{
+  "login": [
+    {
+      "description": "TC01: Login unsuccessfully with blank email and password",
+      "email": "",
+      "password": "",
+      "messages": {
+        "generalMessage": "There was a problem with your login and/or errors exist in your form.",
+        "emailMessage": "You must specify a username.",
+        "passwordMessage": "You must specify a password."
+      }
+    },
+    {
+      "description": "TC02: Login unsuccessfully with invalid email and password",
+      "email": "testrailway01",
+      "password": "abc",
+      "messages": {
+        "generalMessage": "Invalid username or password. Please try again.",
+        "emailMessage": "",
+        "passwordMessage": ""
+      }
+    },
+    {
+      "description": "TC03: Login unsuccessfully with blank password",
+      "email": "testrailway01@gmail.com",
+      "password": "",
+      "messages": {
+        "generalMessage": "There was a problem with your login and/or errors exist in your form.",
+        "emailMessage": "",
+        "passwordMessage": "You must specify a password."
+      }
+    },
+    {
+      "description": "TC04: Login unsuccessfully with blank email",
+      "email": "",
+      "password": "abc@1234",
+      "messages": {
+        "generalMessage": "There was a problem with your login and/or errors exist in your form.",
+        "emailMessage": "You must specify a username.",
+        "passwordMessage": ""
+      }
+    },
+    {
+      "description": "TC05: Login successfully with valid email and password",
+      "email": "testrailway01@gmail.com",
+      "password": "abc@1234",
+      "messages": {
+        "generalMessage": "Welcome testrailway01@gmail.com",
+        "emailMessage": "",
+        "passwordMessage": ""
+      }
+    }
+  ]
+}

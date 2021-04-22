@@ -6,7 +6,7 @@
     </listeners>
     <test name="Test Suite">
         <classes>
-            <class name="com.logigear.LoginTest" />
+            <class name="com.logigear.tests.LoginTest" />
         </classes>
     </test>
 </suite>
