@@ -4,13 +4,22 @@ import java.util.List;
 
 public class General {
 
-    private List<Login> login;
+    private List<Login> logins;
+    private List<Register> registers;
 
-    public List<Login> getLogin() {
-        return login;
+    public List<Login> getLogins() {
+        return logins;
     }
 
-    public void setLogin(List<Login> login) {
-        this.login = login;
+    public void setLogins(List<Login> logins) {
+        this.logins = logins;
+    }
+
+    public List<Register> getRegisters() {
+        return registers;
+    }
+
+    public void setRegisters(List<Register> registers) {
+        this.registers = registers;
     }
 }

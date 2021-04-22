@@ -8,9 +8,7 @@ import com.logigear.page_objects.HomePage;
 import com.logigear.page_objects.LoginPage;
 import com.sun.org.glassfish.gmbal.Description;
 import org.testng.Assert;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 import java.io.IOException;
 import java.util.List;
@@ -21,18 +19,18 @@ public class LoginTest extends BaseTest {
     private LoginPage loginPage;
     private List<Login> logins;
 
-    @BeforeTest
-    public void prepareEnvironment() throws IOException {
+    @BeforeClass
+    public void beforeTest() throws IOException {
         ObjectMapper objectMapper = new ObjectMapper();
         General general = objectMapper.readValue(Common.readFile("test-data.json"), General.class);
-        logins = general.getLogin();
+        logins = general.getLogins();
         homePage = new HomePage();
         loginPage = new LoginPage();
         homePage.goToLoginPage();
     }
 
-    @AfterTest
-    public void clearEnvironment() {
+    @AfterClass
+    public void afterTest() {
         homePage.logout();
     }
 

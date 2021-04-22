@@ -5,25 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ac6ee06d-86b0-4a92-809b-47cb60452138" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/logigear/tests/LoginTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/logigear/helper/Common.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/logigear/helper/Common.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/logigear/helper/Constant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/logigear/helper/Constant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/logigear/helper/ErrorMessage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/logigear/helper/element_helper/BaseElement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/logigear/helper/element_helper/BaseElement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/logigear/helper/element_helper/Button.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/logigear/helper/element_helper/Button.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/logigear/helper/element_helper/Label.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/logigear/helper/element_helper/Label.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/logigear/helper/element_helper/Tab.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/logigear/helper/element_helper/Tab.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/logigear/helper/element_helper/TextBox.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/logigear/helper/element_helper/TextBox.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/logigear/page_objects/BasePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/logigear/page_objects/BasePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/logigear/page_objects/RegisterPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/logigear/page_objects/RegisterPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/output-result/html/overview.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/output-result/html/overview.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/output-result/html/suite1_test1_results.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/output-result/html/suite1_test1_results.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/output-result/xml/com.logigear.LoginTest_results.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/output-result/xml/com.logigear.LoginTest_results.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/testng.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/logigear/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/logigear/tests/BaseTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/logigear/LoginTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/logigear/RegisterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/logigear/tests/RegisterTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/logigear/models/General.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/logigear/models/General.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/logigear/tests/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/logigear/tests/BaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/logigear/tests/LoginTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/logigear/tests/LoginTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/logigear/tests/RegisterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/logigear/tests/RegisterTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/test-data.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/test-data.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +58,25 @@
       <recent name="com.logigear.models" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="TestNG.TestSuite">
+    <configuration name="LoginTest.TC01" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="selenium-an" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.logigear.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.logigear.tests" />
+      <option name="MAIN_CLASS_NAME" value="com.logigear.tests.LoginTest" />
+      <option name="METHOD_NAME" value="TC01" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="RegisterTest.TC01" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="selenium-an" />
       <extension name="coverage">
@@ -107,7 +115,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.RegisterTest.TC01 (1)" />
+        <item itemvalue="TestNG.LoginTest.TC01" />
       </list>
     </recent_temporary>
   </component>
