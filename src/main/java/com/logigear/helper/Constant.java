@@ -6,11 +6,8 @@ import org.openqa.selenium.WebDriver;
 public class Constant {
 
     public static final String RAILWAY_URL = "http://www.railwayqa.somee.com/";
-    public static final String EMAIL = "testrailway01@gmail.com";
-    public static final String PASSWORD = "abc@1234";
-    public static final String PID = "123456789";
-    public static final String BLANK_STRING = "";
-    public static final String PREFIX_WELCOME_STRING = "Welcome ";
+    public static final String MAIN_RESOURCES_PATH = "/src/main/resources/";
+    public static final String TEST_RESOURCES_PATH = "/src/test/resources/";
     public static DriverManager DRIVER_MANAGER;
     public static WebDriver WEB_DRIVER;
 

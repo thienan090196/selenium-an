@@ -2,6 +2,7 @@ package com.logigear.helper.element_helper;
 
 import com.logigear.helper.Constant;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 
 import java.util.List;
@@ -20,5 +21,30 @@ public class BaseElement {
 
     public List<WebElement> findElements() {
         return Constant.WEB_DRIVER.findElements(locator);
+    }
+
+    public void click() {
+        findElement().click();
+    }
+
+    public String getText() {
+        return findElement().getText();
+    }
+
+    public boolean isDisplayed() {
+        return findElement().isDisplayed();
+    }
+
+    public boolean isEnabled() {
+        return findElement().isEnabled();
+    }
+
+    public boolean isSelected() {
+        return findElement().isDisplayed();
+    }
+
+    public void disableElement() {
+        JavascriptExecutor js = (JavascriptExecutor) Constant.WEB_DRIVER;
+        js.executeScript("arguments[0].setAttribute('style', 'display:none')", findElement());
     }
 }

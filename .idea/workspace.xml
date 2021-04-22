@@ -5,16 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ac6ee06d-86b0-4a92-809b-47cb60452138" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/logigear/helper/element_helper/BaseElement.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/logigear/helper/element_helper/Element.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/logigear/page_objects/BasePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/logigear/page_objects/BasePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/logigear/page_objects/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/logigear/page_objects/HomePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/logigear/page_objects/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/logigear/page_objects/LoginPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/logigear/page_objects/RegisterConfirmPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/logigear/page_objects/RegisterConfirmPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/output-result/html/overview.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/output-result/html/overview.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/output-result/html/suite1_test1_results.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/output-result/html/suite1_test1_results.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/output-result/xml/com.logigear.LoginTest_results.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/output-result/xml/com.logigear.LoginTest_results.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/testng.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/logigear/models/General.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/logigear/models/General.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/logigear/tests/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/logigear/tests/BaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/logigear/tests/LoginTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/logigear/tests/LoginTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/logigear/tests/RegisterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/logigear/tests/RegisterTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/test-data.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/test-data.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,13 +41,21 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/output-result" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/src/test/java/com/logigear" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/logigear/page_objects" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\SATTDN21.01.01\Desktop\Selenium\selenium-an\src\main\java\com\logigear\page_objects" />
       <recent name="C:\Users\SATTDN21.01.01\Desktop\Selenium\selenium_an\src\main\resources" />
       <recent name="C:\Users\SATTDN21.01.01\Desktop\Selenium\selenium_an\src\main\java\com\logigear\helper\web_driver_helper" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.logigear.models" />
     </key>
   </component>
   <component name="RunManager" selected="TestNG.TestSuite">
@@ -56,12 +63,30 @@
       <module name="selenium-an" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.logigear.*" />
+          <option name="PATTERN" value="com.logigear.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.logigear.tests" />
+      <option name="MAIN_CLASS_NAME" value="com.logigear.tests.LoginTest" />
+      <option name="METHOD_NAME" value="TC01" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RegisterTest.TC01" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="selenium-an" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.logigear.tests.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.logigear" />
-      <option name="MAIN_CLASS_NAME" value="com.logigear.LoginTest" />
+      <option name="MAIN_CLASS_NAME" value="com.logigear.tests.RegisterTest" />
       <option name="METHOD_NAME" value="TC01" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
@@ -110,7 +135,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="an" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>

@@ -1,5 +1,6 @@
 package com.logigear.page_objects;
 
+import com.logigear.helper.element_helper.Label;
 import com.logigear.helper.element_helper.Tab;
 import org.openqa.selenium.By;
 
@@ -17,6 +18,8 @@ public class BasePage {
     private final Tab tabRegister = new Tab(By.cssSelector("a[href='/Account/Register.cshtml']"));
     private final Tab tabLogin = new Tab(By.cssSelector("a[href='/Account/Login.cshtml']"));
     private final Tab tabLogout = new Tab(By.cssSelector("a[href='/Account/Logout']"));
+    private final Label lblFooterBanner = new Label(By.cssSelector("[style^='opacity: 0.9']"));
+    private final Label lblFooter = new Label(By.cssSelector("[onmouseover='S_ssac();']"));
 
     //Methods
     public void goToHomePage() {
@@ -61,6 +64,11 @@ public class BasePage {
 
     public void logout() {
         this.tabLogout.click();
+    }
+
+    public void disableFooterBanner() {
+        this.lblFooter.disableElement();
+        this.lblFooterBanner.disableElement();
     }
 
 }

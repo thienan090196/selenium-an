@@ -7,8 +7,5 @@ public class Tab extends BaseElement {
     public Tab(By locator) {
         super(locator);
     }
-
-    public void click() {
-        findElement().click();
-    }
+    
 }
