@@ -1,8 +1,10 @@
 package com.logigear.helper.web_driver_helper;
 
+import org.openqa.selenium.WebDriver;
+
 public class DriverManagerFactory {
 
-    public static DriverManager getDriverManager(DriverType driverType) {
+    public static WebDriver getDriverManager(DriverType driverType) {
         DriverManager driverManager;
         switch (driverType) {
             case CHROME:
@@ -15,7 +17,7 @@ public class DriverManagerFactory {
                 driverManager = new IEDriverManager();
                 break;
         }
-        return driverManager;
+        return driverManager.getWebDriver();
     }
 
     public enum DriverType {

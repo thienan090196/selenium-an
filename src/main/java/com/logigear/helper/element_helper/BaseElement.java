@@ -10,6 +10,7 @@ import java.util.List;
 public class BaseElement {
 
     private final By locator;
+    private JavascriptExecutor js = (JavascriptExecutor) Constant.WEB_DRIVER;
 
     public BaseElement(By locator) {
         this.locator = locator;
@@ -44,7 +45,10 @@ public class BaseElement {
     }
 
     public void disableElement() {
-        JavascriptExecutor js = (JavascriptExecutor) Constant.WEB_DRIVER;
         js.executeScript("arguments[0].setAttribute('style', 'display:none')", findElement());
+    }
+
+    public void waitForElementExist() {
+        js.executeScript("arguments[0].scrollIntoView(true);", findElement());
     }
 }

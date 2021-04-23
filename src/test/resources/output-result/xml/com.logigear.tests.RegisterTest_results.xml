@@ -4,10 +4,10 @@
            failures="0"
            errors="0"
            skipped="0"
-           time="1.603">
+           time="16.794">
   <properties />
   
   
-            <testcase name="TC01" time="1.603" classname="com.logigear.tests.RegisterTest" />
+            <testcase name="TC01" time="16.794" classname="com.logigear.tests.RegisterTest" />
       
 </testsuite>

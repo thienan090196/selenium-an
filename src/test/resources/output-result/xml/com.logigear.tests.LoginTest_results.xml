@@ -4,14 +4,14 @@
            failures="0"
            errors="0"
            skipped="0"
-           time="28.626">
+           time="30.306">
   <properties />
   
   
-            <testcase name="TC01" time="1.267" classname="com.logigear.tests.LoginTest" />
-                <testcase name="TC05" time="8.798" classname="com.logigear.tests.LoginTest" />
-                <testcase name="TC04" time="16.511" classname="com.logigear.tests.LoginTest" />
-                <testcase name="TC03" time="1.009" classname="com.logigear.tests.LoginTest" />
-                <testcase name="TC02" time="1.041" classname="com.logigear.tests.LoginTest" />
+            <testcase name="TC01" time="1.311" classname="com.logigear.tests.LoginTest" />
+                <testcase name="TC04" time="9.477" classname="com.logigear.tests.LoginTest" />
+                <testcase name="TC03" time="16.659" classname="com.logigear.tests.LoginTest" />
+                <testcase name="TC05" time="1.711" classname="com.logigear.tests.LoginTest" />
+                <testcase name="TC02" time="1.148" classname="com.logigear.tests.LoginTest" />
       
 </testsuite>

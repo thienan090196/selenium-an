@@ -25,6 +25,7 @@ public class RegisterPage extends BasePage {
         this.txtPassword.enterText(password);
         this.txtConfirmPassword.enterText(password);
         this.txtPID.enterText(pid);
+        this.btnRegister.waitForElementExist();
         this.btnRegister.click();
     }
 
