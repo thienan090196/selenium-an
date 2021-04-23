@@ -19,6 +19,7 @@ public class LoginPage extends BasePage {
     public void login(String email, String password) {
         this.txtEmail.enterText(email);
         this.txtPassword.enterText(password);
+        this.btnLogin.waitForElementExist();
         this.btnLogin.click();
     }
 

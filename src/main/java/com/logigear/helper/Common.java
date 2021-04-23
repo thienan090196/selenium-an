@@ -1,5 +1,7 @@
 package com.logigear.helper;
 
+import com.github.javafaker.Faker;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
@@ -45,16 +47,8 @@ public class Common {
     }
 
     public static String generateRandomEmailString() {
-        String STRING_TOKENS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890";
-        StringBuilder stringBuilder = new StringBuilder();
-        Random random = new Random();
-        while (stringBuilder.length() <= 3) {
-            int index = random.nextInt(STRING_TOKENS.length());
-            stringBuilder.append(STRING_TOKENS.charAt(index));
-        }
-        stringBuilder.append(System.nanoTime());
-        stringBuilder.append("@gmail.com");
-        return stringBuilder.toString();
+        Faker faker = new Faker();
+        return faker.bothify("email####@gmail.com");
     }
 
 }
