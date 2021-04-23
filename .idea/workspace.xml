@@ -113,6 +113,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="TestNG.TestSuite" />
+      <item itemvalue="TestNG.LoginTest.TC01" />
+      <item itemvalue="TestNG.RegisterTest.TC01" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="TestNG.LoginTest.TC01" />
