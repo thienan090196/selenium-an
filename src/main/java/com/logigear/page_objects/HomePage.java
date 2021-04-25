@@ -6,11 +6,11 @@ import org.openqa.selenium.By;
 public class HomePage extends BasePage {
 
     //Elements
-    private final Label lblWelcomeMessage = new Label(By.xpath("//div[@class = 'account']//strong"));
+    private final Label lblWelcomeMessage = new Label(By.cssSelector(".account strong"));
 
     //Methods
-    public String getWelcomeMessage() {
+    @Override
+    public String getMessages() {
         return this.lblWelcomeMessage.getText();
     }
-
 }

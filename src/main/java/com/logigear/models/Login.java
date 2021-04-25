@@ -5,7 +5,7 @@ public class Login {
     private String description;
     private String email;
     private String password;
-    private Message messages;
+    private String message;
 
     public String getDescription() {
         return description;
@@ -31,11 +31,11 @@ public class Login {
         this.password = password;
     }
 
-    public Message getMessages() {
-        return messages;
+    public String getMessage() {
+        return message;
     }
 
-    public void setMessages(Message messages) {
-        this.messages = messages;
+    public void setMessages(String message) {
+        this.message = message;
     }
 }

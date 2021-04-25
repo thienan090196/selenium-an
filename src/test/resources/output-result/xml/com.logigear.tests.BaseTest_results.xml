@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Firefox Test"
+<testsuite name="Chrome Test"
            tests="1"
            failures="0"
            errors="0"
            skipped="0"
-           time="1.928">
+           time="0.007">
   <properties />
   
   
-            <testcase name="TC01" time="1.928" classname="com.logigear.tests.RegisterTest" />
+            <testcase name="Test" time="0.007" classname="com.logigear.tests.BaseTest" />
       
 </testsuite>

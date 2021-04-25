@@ -1,10 +1,11 @@
 package com.logigear.helper.web_driver_helper;
 
+import com.logigear.helper.Constant;
 import org.openqa.selenium.WebDriver;
 
 public class DriverManagerFactory {
 
-    public static WebDriver getDriverManager(DriverType driverType) {
+    public static WebDriver getDriverManager(Constant.DriverType driverType) {
         DriverManager driverManager;
         switch (driverType) {
             case CHROME:
@@ -14,14 +15,9 @@ public class DriverManagerFactory {
                 driverManager = new FirefoxDriverManager();
                 break;
             default:
-                driverManager = new IEDriverManager();
+                driverManager = new EdgeDriverManager();
                 break;
         }
         return driverManager.getWebDriver();
     }
-
-    public enum DriverType {
-        CHROME, FIREFOX, IE;
-    }
-
 }

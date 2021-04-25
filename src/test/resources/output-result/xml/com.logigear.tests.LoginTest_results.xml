@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Test Suite"
+<testsuite name="Firefox Test"
            tests="5"
            failures="0"
            errors="0"
            skipped="0"
-           time="30.306">
+           time="98.873">
   <properties />
   
   
-            <testcase name="TC01" time="1.311" classname="com.logigear.tests.LoginTest" />
-                <testcase name="TC04" time="9.477" classname="com.logigear.tests.LoginTest" />
-                <testcase name="TC03" time="16.659" classname="com.logigear.tests.LoginTest" />
-                <testcase name="TC05" time="1.711" classname="com.logigear.tests.LoginTest" />
-                <testcase name="TC02" time="1.148" classname="com.logigear.tests.LoginTest" />
+            <testcase name="TC01" time="29.880" classname="com.logigear.tests.LoginTest" />
+                <testcase name="TC01" time="21.581" classname="com.logigear.tests.LoginTest" />
+                <testcase name="TC01" time="11.883" classname="com.logigear.tests.LoginTest" />
+                <testcase name="TC02" time="20.950" classname="com.logigear.tests.LoginTest" />
+                <testcase name="TC01" time="14.579" classname="com.logigear.tests.LoginTest" />
       
 </testsuite>

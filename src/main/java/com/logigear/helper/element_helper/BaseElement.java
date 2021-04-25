@@ -1,27 +1,29 @@
 package com.logigear.helper.element_helper;
 
 import com.logigear.helper.Constant;
+import com.logigear.helper.web_driver_helper.DriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
 
 public class BaseElement {
 
-    private final By locator;
-    private JavascriptExecutor js = (JavascriptExecutor) Constant.WEB_DRIVER;
+    private By locator;
 
     public BaseElement(By locator) {
         this.locator = locator;
     }
 
     public WebElement findElement() {
-        return Constant.WEB_DRIVER.findElement(locator);
+        return DriverFactory.getInstance().getDriver().findElement(locator);
     }
 
     public List<WebElement> findElements() {
-        return Constant.WEB_DRIVER.findElements(locator);
+        return DriverFactory.getInstance().getDriver().findElements(locator);
     }
 
     public void click() {
@@ -29,11 +31,18 @@ public class BaseElement {
     }
 
     public String getText() {
-        return findElement().getText();
+        if (isExisted()) {
+            return findElement().getText();
+        }
+        return Constant.BLANK_STRING;
     }
 
     public boolean isDisplayed() {
         return findElement().isDisplayed();
+    }
+
+    public boolean isExisted() {
+        return findElements().size() != 0;
     }
 
     public boolean isEnabled() {
@@ -45,10 +54,17 @@ public class BaseElement {
     }
 
     public void disableElement() {
+        JavascriptExecutor js = (JavascriptExecutor) DriverFactory.getInstance().getDriver();
         js.executeScript("arguments[0].setAttribute('style', 'display:none')", findElement());
     }
 
-    public void waitForElementExist() {
+    public void scrollToView() {
+        JavascriptExecutor js = (JavascriptExecutor) DriverFactory.getInstance().getDriver();
         js.executeScript("arguments[0].scrollIntoView(true);", findElement());
+    }
+
+    public void waitForElementExist() {
+        WebDriverWait webDriverWait = new WebDriverWait(DriverFactory.getInstance().getDriver(), Constant.WAIT_ELEMENT_TIME);
+        webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
 }

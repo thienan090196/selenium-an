@@ -8,11 +8,11 @@ import org.openqa.selenium.WebElement;
 public class RegisterConfirmPage extends BasePage {
 
     //Elements
-    private final Label lblSuccessfulMessage = new Label(By.xpath("//div[@id = 'content']//p"));
+    private final Label lblSuccessfulMessage = new Label(By.cssSelector("#content p"));
 
     //Methods
-    public String getSuccessfulMessage() {
+    @Override
+    public String getMessages() {
         return this.lblSuccessfulMessage.getText();
     }
-
 }

@@ -10,12 +10,7 @@ public class ChromeDriverManager extends DriverManager {
     public void createWebDriver() {
         System.out.println("Initializing Chrome Driver");
         WebDriverManager.chromedriver().setup();
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--disable-notifications");
-        options.addArguments("--start-maximized");
-        options.addArguments("--disable-features=EnableEphemeralFlashPermission");
-        options.addArguments("--disable-infobars");
-        this.driver = new ChromeDriver(options);
+        this.driver = new ChromeDriver();
     }
 
 }

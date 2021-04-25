@@ -6,7 +6,7 @@ public class Register {
     private String email;
     private String password;
     private String pid;
-    private Message messages;
+    private String message;
 
     public String getDescription() {
         return description;
@@ -40,11 +40,11 @@ public class Register {
         this.pid = pid;
     }
 
-    public Message getMessages() {
-        return messages;
+    public String getMessage() {
+        return message;
     }
 
-    public void setMessages(Message messages) {
-        this.messages = messages;
+    public void setMessage(String message) {
+        this.message = message;
     }
 }

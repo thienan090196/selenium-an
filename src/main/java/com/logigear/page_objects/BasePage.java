@@ -4,10 +4,11 @@ import com.logigear.helper.element_helper.Label;
 import com.logigear.helper.element_helper.Tab;
 import org.openqa.selenium.By;
 
-public class BasePage {
+public abstract class BasePage {
 
     //Elements
-    private final Tab tabHome = new Tab(By.cssSelector("a[href='../']"));
+//    private final Tab tabHome = new Tab(By.cssSelector("#menu a:first-child"));
+    private final Tab tabHome = new Tab(By.xpath("//span[text() = 'Home']//parent::a"));
     private final Tab tabFAQ = new Tab(By.cssSelector("a[href='/Page/FAQ.cshtml']"));
     private final Tab tabContact = new Tab(By.cssSelector("a[href='/Page/Contact.cshtml']"));
     private final Tab tabTimetable = new Tab(By.cssSelector("a[href='TrainTimeListPage.cshtml']"));
@@ -63,5 +64,7 @@ public class BasePage {
     public void logout() {
         this.tabLogout.click();
     }
+
+    public abstract String getMessages();
 
 }
