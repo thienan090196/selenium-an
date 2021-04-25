@@ -1,0 +1,26 @@
+[
+  {
+    "description": "TC01: Login unsuccessfully with blank email and password",
+    "email": "",
+    "password": "",
+    "message": "There was a problem with your login and/or errors exist in your form.You must specify a username.You must specify a password."
+  },
+  {
+    "description": "TC02: Login unsuccessfully with invalid email and password",
+    "email": "testrailway01",
+    "password": "abc",
+    "message": "Invalid username or password. Please try again."
+  },
+  {
+    "description": "TC03: Login unsuccessfully with blank password",
+    "email": "testrailway01@gmail.com",
+    "password": "",
+    "message": "There was a problem with your login and/or errors exist in your form.You must specify a password."
+  },
+  {
+    "description": "TC04: Login unsuccessfully with blank email",
+    "email": "",
+    "password": "abc@1234",
+    "message": "There was a problem with your login and/or errors exist in your form.You must specify a username."
+  }
+]
