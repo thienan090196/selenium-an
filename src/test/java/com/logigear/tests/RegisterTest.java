@@ -26,13 +26,13 @@ public class RegisterTest extends BaseTest {
         Assert.assertEquals(actualResult, expectedResult, actualResult + " is not matched with " + expectedResult);
     }
 
-    @Test(dataProvider = "invalid-registers", dataProviderClass = DataProviderHelper.class, description = "Register unsuccessfully with invalid data")
-    public void TC02(Register register) {
-        homePage.goToRegisterPage();
-        registerPage.register(register.getEmail(), register.getPassword(), register.getConfirmPassword(), register.getPid());
-
-        String actualResult = registerPage.getMessages();
-        String expectedResult = register.getMessage();
-        Assert.assertEquals(actualResult, expectedResult, actualResult + " is not matched with " + expectedResult);
-    }
+//    @Test(dataProvider = "invalid-registers", dataProviderClass = DataProviderHelper.class, description = "Register unsuccessfully with invalid data")
+//    public void TC02(Register register) {
+//        homePage.goToRegisterPage();
+//        registerPage.register(register.getEmail(), register.getPassword(), register.getConfirmPassword(), register.getPid());
+//
+//        String actualResult = registerPage.getMessages();
+//        String expectedResult = register.getMessage();
+//        Assert.assertEquals(actualResult, expectedResult, actualResult + " is not matched with " + expectedResult);
+//    }
 }

@@ -9,7 +9,7 @@ public class DriverManagerFactory {
 
     }
 
-    private static DriverManagerFactory instance  = new DriverManagerFactory();
+    private static final DriverManagerFactory instance  = new DriverManagerFactory();
 
     public static DriverManagerFactory getInstance() {
         return instance;

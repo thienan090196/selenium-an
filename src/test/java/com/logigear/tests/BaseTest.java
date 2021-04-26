@@ -17,10 +17,16 @@ public class BaseTest {
     @BeforeTest
     @Parameters("browser")
     public void setUp(Constant.DriverType browser) {
-        if (browser == Constant.DriverType.CHROME) {
-            DriverManagerFactory.getInstance().setDriver(Constant.DriverType.CHROME);
-        } else {
-            DriverManagerFactory.getInstance().setDriver(Constant.DriverType.FIREFOX);
+        switch (browser) {
+            case CHROME:
+                DriverManagerFactory.getInstance().setDriver(Constant.DriverType.CHROME);
+                break;
+            case FIREFOX:
+                DriverManagerFactory.getInstance().setDriver(Constant.DriverType.FIREFOX);
+                break;
+            default:
+                DriverManagerFactory.getInstance().setDriver(Constant.DriverType.EDGE);
+                break;
         }
         webDriver = DriverManagerFactory.getInstance().getDriver();
         webDriver.manage().timeouts().implicitlyWait(Constant.WAIT_IMPLICITLY_TIME, TimeUnit.SECONDS);
