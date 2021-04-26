@@ -1,6 +1,7 @@
 package com.logigear.tests;
 
 import com.logigear.helper.Constant;
+import com.logigear.helper.LoggerHelper;
 import com.logigear.helper.web_driver_helper.DriverManagerFactory;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
@@ -17,6 +18,7 @@ public class BaseTest {
     @BeforeTest
     @Parameters("browser")
     public void setUp(Constant.DriverType browser) {
+        LoggerHelper.info("Start " + browser + "...");
         switch (browser) {
             case CHROME:
                 DriverManagerFactory.getInstance().setDriver(Constant.DriverType.CHROME);
@@ -37,6 +39,7 @@ public class BaseTest {
     @AfterTest
     public void tearDown() {
         DriverManagerFactory.getInstance().closeBrowser();
+        LoggerHelper.info("Quitting driver...");
     }
 
 }
