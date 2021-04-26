@@ -20,10 +20,10 @@ public class RegisterPage extends BasePage {
     private final Label lblPIDErrorMessage = new Label(By.cssSelector("[for=pid].validation-error"));
 
     //Methods
-    public void register(String email, String password, String pid) {
+    public void register(String email, String password, String confirmPassword, String pid) {
         this.txtEmail.enterText(email);
         this.txtPassword.enterText(password);
-        this.txtConfirmPassword.enterText(password);
+        this.txtConfirmPassword.enterText(confirmPassword);
         this.txtPID.enterText(pid);
         this.btnRegister.scrollToView();
         this.btnRegister.click();

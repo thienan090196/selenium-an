@@ -1,7 +1,7 @@
 package com.logigear.helper.element_helper;
 
 import com.logigear.helper.Constant;
-import com.logigear.helper.web_driver_helper.DriverFactory;
+import com.logigear.helper.web_driver_helper.DriverManagerFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
@@ -19,11 +19,11 @@ public class BaseElement {
     }
 
     public WebElement findElement() {
-        return DriverFactory.getInstance().getDriver().findElement(locator);
+        return DriverManagerFactory.getInstance().getDriver().findElement(locator);
     }
 
     public List<WebElement> findElements() {
-        return DriverFactory.getInstance().getDriver().findElements(locator);
+        return DriverManagerFactory.getInstance().getDriver().findElements(locator);
     }
 
     public void click() {
@@ -42,7 +42,7 @@ public class BaseElement {
     }
 
     public boolean isExisted() {
-        return findElements().size() != 0;
+        return !findElements().isEmpty();
     }
 
     public boolean isEnabled() {
@@ -54,17 +54,17 @@ public class BaseElement {
     }
 
     public void disableElement() {
-        JavascriptExecutor js = (JavascriptExecutor) DriverFactory.getInstance().getDriver();
+        JavascriptExecutor js = (JavascriptExecutor) DriverManagerFactory.getInstance().getDriver();
         js.executeScript("arguments[0].setAttribute('style', 'display:none')", findElement());
     }
 
     public void scrollToView() {
-        JavascriptExecutor js = (JavascriptExecutor) DriverFactory.getInstance().getDriver();
+        JavascriptExecutor js = (JavascriptExecutor) DriverManagerFactory.getInstance().getDriver();
         js.executeScript("arguments[0].scrollIntoView(true);", findElement());
     }
 
     public void waitForElementExist() {
-        WebDriverWait webDriverWait = new WebDriverWait(DriverFactory.getInstance().getDriver(), Constant.WAIT_ELEMENT_TIME);
+        WebDriverWait webDriverWait = new WebDriverWait(DriverManagerFactory.getInstance().getDriver(), Constant.WAIT_ELEMENT_TIME);
         webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
 }

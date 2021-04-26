@@ -1,6 +1,5 @@
 package com.logigear.page_objects;
 
-import com.logigear.helper.element_helper.Label;
 import com.logigear.helper.element_helper.Tab;
 import org.openqa.selenium.By;
 
@@ -16,7 +15,7 @@ public abstract class BasePage {
     private final Tab tabBookTicket = new Tab(By.cssSelector("a[href='/Page/BookTicketPage.cshtml']"));
     private final Tab tabMyTicket = new Tab(By.cssSelector("a[href='/Page/ManageTicket.cshtml']"));
     private final Tab tabChangePassword = new Tab(By.cssSelector("a[href='/Account/ChangePassword.cshtml']"));
-    private final Tab tabRegister = new Tab(By.cssSelector("a[href='/Account/Register.cshtml']"));
+    private final Tab tabRegister = new Tab(By.cssSelector("#menu a[href='/Account/Register.cshtml']"));
     private final Tab tabLogin = new Tab(By.cssSelector("a[href='/Account/Login.cshtml']"));
     private final Tab tabLogout = new Tab(By.cssSelector("a[href='/Account/Logout']"));
 
@@ -63,6 +62,10 @@ public abstract class BasePage {
 
     public void logout() {
         this.tabLogout.click();
+    }
+
+    public boolean isTabLogoutExist() {
+        return this.tabLogout.isExisted();
     }
 
     public abstract String getMessages();

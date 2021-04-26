@@ -1,8 +1,5 @@
 package com.logigear.helper;
 
-import com.logigear.helper.web_driver_helper.DriverManager;
-import org.openqa.selenium.WebDriver;
-
 public class Constant {
 
     public enum DriverType {
@@ -17,7 +14,5 @@ public class Constant {
     public static final int DEFAULT_SCREEN_HEIGHT = 768;
     public static final int WAIT_ELEMENT_TIME = 5;
     public static final int WAIT_IMPLICITLY_TIME = 10;
-    public static DriverManager DRIVER_MANAGER;
-    public static WebDriver WEB_DRIVER;
 
 }
