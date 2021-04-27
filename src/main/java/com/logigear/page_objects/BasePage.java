@@ -1,75 +1,71 @@
 package com.logigear.page_objects;
 
-import com.logigear.elements.Tab;
+import com.logigear.elements.Button;
+import com.logigear.elements.Label;
 import org.openqa.selenium.By;
 
 public class BasePage {
 
     //Elements
 //    private final Tab tabHome = new Tab(By.cssSelector("#menu a:first-child"));
-    private final Tab tabHome = new Tab(By.xpath("//span[text() = 'Home']//parent::a"));
-    private final Tab tabFAQ = new Tab(By.cssSelector("a[href='/Page/FAQ.cshtml']"));
-    private final Tab tabContact = new Tab(By.cssSelector("a[href='/Page/Contact.cshtml']"));
-    private final Tab tabTimetable = new Tab(By.cssSelector("a[href='TrainTimeListPage.cshtml']"));
-    private final Tab tabTicketPrice = new Tab(By.cssSelector("a[href='/Page/TrainPriceListPage.cshtml']"));
-    private final Tab tabBookTicket = new Tab(By.cssSelector("a[href='/Page/BookTicketPage.cshtml']"));
-    private final Tab tabMyTicket = new Tab(By.cssSelector("a[href='/Page/ManageTicket.cshtml']"));
-    private final Tab tabChangePassword = new Tab(By.cssSelector("a[href='/Account/ChangePassword.cshtml']"));
-    private final Tab tabRegister = new Tab(By.cssSelector("#menu a[href='/Account/Register.cshtml']"));
-    private final Tab tabLogin = new Tab(By.cssSelector("a[href='/Account/Login.cshtml']"));
-    private final Tab tabLogout = new Tab(By.cssSelector("a[href='/Account/Logout']"));
+    private final Button btnHome = new Button(By.xpath("//span[text() = 'Home']//parent::a"));
+    private final Button btnFAQ = new Button(By.cssSelector("a[href='/Page/FAQ.cshtml']"));
+    private final Button btnContact = new Button(By.cssSelector("a[href='/Page/Contact.cshtml']"));
+    private final Button btnTimetable = new Button(By.cssSelector("a[href='TrainTimeListPage.cshtml']"));
+    private final Button btnTicketPrice = new Button(By.cssSelector("a[href='/Page/TrainPriceListPage.cshtml']"));
+    private final Button btnBookTicket = new Button(By.cssSelector("a[href='/Page/BookTicketPage.cshtml']"));
+    private final Button btnMyTicket = new Button(By.cssSelector("a[href='/Page/ManageTicket.cshtml']"));
+    private final Button btnChangePassword = new Button(By.cssSelector("a[href='/Account/ChangePassword.cshtml']"));
+    private final Button btnRegister = new Button(By.cssSelector("#menu a[href='/Account/Register.cshtml']"));
+    private final Button btnLogin = new Button(By.cssSelector("a[href='/Account/Login.cshtml']"));
+    private final Button btnLogout = new Button(By.cssSelector("a[href='/Account/Logout']"));
 
     //Methods
     public void goToHomePage() {
-        this.tabHome.click();
+        this.btnHome.click();
     }
 
     public void goToFAQPage() {
-        this.tabFAQ.click();
+        this.btnFAQ.click();
     }
 
     public void goToContactPage() {
-        this.tabContact.click();
+        this.btnContact.click();
     }
 
     public void goToTimetablePage() {
-        this.tabTimetable.click();
+        this.btnTimetable.click();
     }
 
     public void goToTicketPricePage() {
-        this.tabTicketPrice.click();
+        this.btnTicketPrice.click();
     }
 
     public void goToBookTicketPage() {
-        this.tabBookTicket.click();
+        this.btnBookTicket.click();
     }
 
     public void goToMyTicketPage() {
-        this.tabMyTicket.click();
+        this.btnMyTicket.click();
     }
 
     public void goToChangePasswordPage() {
-        this.tabChangePassword.click();
+        this.btnChangePassword.click();
     }
 
     public void goToRegisterPage() {
-        this.tabRegister.click();
+        this.btnRegister.click();
     }
 
     public void goToLoginPage() {
-        this.tabLogin.click();
+        this.btnLogin.click();
     }
 
     public void logout() {
-        this.tabLogout.click();
+        this.btnLogout.click();
     }
 
-    public boolean isTabLogoutExist() {
-        return this.tabLogout.isExisted();
-    }
-
-    public String getMessage() {
+    public String getGeneralMessage() {
         return "Welcome to Railway Website";
     }
-
 }

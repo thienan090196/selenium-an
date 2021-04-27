@@ -6,7 +6,7 @@ public class Constant {
         CHROME, FIREFOX, EDGE;
     }
 
-    public static final String RAILWAY_URL = "http://www.railway.somee.com/";
+    public static final String RAILWAY_URL = "http://www.railway2.somee.com/";
     public static final String USERNAME = "testrailway01@gmail.com";
     public static final String PASSWORD = "abc@12345";
     public static final String TEST_DATA_FOLDER_PATH = "src/test/resources/test-data/";

@@ -5,6 +5,8 @@ import com.logigear.elements.Label;
 import com.logigear.elements.TextBox;
 import org.openqa.selenium.By;
 
+import java.util.HashMap;
+
 public class LoginPage extends BasePage {
 
     //Elements
@@ -24,9 +26,15 @@ public class LoginPage extends BasePage {
     }
 
     @Override
-    public String getMessage() {
-        return this.lblGeneralErrorMessage.getText() +
-                this.lblEmailErrorMessage.getText() +
-                this.lblPasswordErrorMessage.getText();
+    public String getGeneralMessage() {
+        return this.lblGeneralErrorMessage.getText();
+    }
+
+    public String getEmailMessage() {
+        return this.lblEmailErrorMessage.getText();
+    }
+
+    public String getPasswordMessage() {
+        return this.lblPasswordErrorMessage.getText();
     }
 }

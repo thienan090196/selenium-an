@@ -7,7 +7,7 @@ import org.testng.annotations.*;
 
 public class BaseTest {
 
-    @BeforeMethod
+    @BeforeTest
     @Parameters("browser")
     public void setUp(Constant.DriverType browser) {
         LoggerHelper.beginTest(browser.name());
@@ -25,7 +25,7 @@ public class BaseTest {
         DriverManagerFactory.navigateToUrl(Constant.RAILWAY_URL);
     }
 
-    @AfterMethod
+    @AfterTest
     public void tearDown() {
         DriverManagerFactory.getInstance().quiteDriver();
         LoggerHelper.endTest("Quitting driver...");

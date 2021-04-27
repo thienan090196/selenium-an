@@ -7,7 +7,7 @@ public class Register {
     private String password;
     private String confirmPassword;
     private String pid;
-    private String message;
+    private Message messages;
 
     public String getDescription() {
         return description;
@@ -49,11 +49,11 @@ public class Register {
         this.pid = pid;
     }
 
-    public String getMessage() {
-        return message;
+    public Message getMessages() {
+        return messages;
     }
 
-    public void setMessage(String message) {
-        this.message = message;
+    public void setMessages(Message messages) {
+        this.messages = messages;
     }
 }

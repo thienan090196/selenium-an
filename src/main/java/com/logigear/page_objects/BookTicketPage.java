@@ -25,9 +25,4 @@ public class BookTicketPage extends BasePage {
         this.ddlSicketAmount.selectDropdownValue(ticketAmount);
         this.btnBookTicket.click();
     }
-
-    @Override
-    public String getMessage() {
-        return this.lblSuccessfulMessage.getText();
-    }
 }

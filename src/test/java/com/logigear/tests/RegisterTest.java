@@ -8,7 +8,6 @@ import com.logigear.helpers.DataHelper;
 import com.logigear.helpers.LoggerHelper;
 import com.logigear.models.Register;
 import com.logigear.page_objects.HomePage;
-import com.logigear.page_objects.RegisterConfirmPage;
 import com.logigear.page_objects.RegisterPage;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
@@ -21,14 +20,6 @@ public class RegisterTest extends BaseTest {
 
     private HomePage homePage = new HomePage();
     private RegisterPage registerPage = new RegisterPage();
-
-    @DataProvider(name = "invalid-register-data")
-    public static Object[] getInvalidRegistersData() throws IOException {
-        ObjectMapper objectMapper = new ObjectMapper();
-        List<Register> registers = objectMapper.readValue(Common.readFile(Constant.TEST_DATA_FOLDER_PATH + "invalid-register-data.json"), new TypeReference<List<Register>>() {
-        });
-        return registers.toArray();
-    }
 
     @Test(description = "Register successfully with valid data")
     public void TC01() {
@@ -43,9 +34,8 @@ public class RegisterTest extends BaseTest {
         register.setPid(DataHelper.getRandomPid());
         registerPage.register(register.getEmail(), register.getPassword(), register.getConfirmPassword(), register.getPid());
 
-        RegisterConfirmPage registerConfirmPage = new RegisterConfirmPage();
-        String actualResult = registerConfirmPage.getMessage();
-        String expectedResult = "Registration Confirmed! You can now log in to the site.";
+        String actualResult = registerPage.getGeneralMessage();
+        String expectedResult = "You're here";
         Assert.assertEquals(actualResult, expectedResult, actualResult + " is not matched with " + expectedResult);
     }
 
@@ -56,8 +46,29 @@ public class RegisterTest extends BaseTest {
         homePage.goToRegisterPage();
         registerPage.register(register.getEmail(), register.getPassword(), register.getConfirmPassword(), register.getPid());
 
-        String actualResult = registerPage.getMessage();
-        String expectedResult = register.getMessage();
-        Assert.assertEquals(actualResult, expectedResult, actualResult + " is not matched with " + expectedResult);
+        String actualGeneralMessage = registerPage.getGeneralMessage();
+        String expectedGeneralMessage = register.getMessages().getGeneralMessage();
+        String actualEmailMessage = registerPage.getEmailMessage();
+        String expectedEmailMessage = register.getMessages().getEmailMessage();
+        String actualPasswordMessage = registerPage.getPasswordMessage();
+        String expectedPasswordMessage = register.getMessages().getPasswordMessage();
+        String actualConfirmPasswordMessage = registerPage.getConfirmPasswordMessage();
+        String expectedConfirmPasswordMessage = register.getMessages().getConfirmPasswordMessage();
+        String actualPIDMessage = registerPage.getPIDMessage();
+        String expectedPIDMessage = register.getMessages().getPidMessage();
+
+        Assert.assertEquals(actualGeneralMessage, expectedGeneralMessage, actualGeneralMessage + " is not matched with " + expectedGeneralMessage);
+        Assert.assertEquals(actualEmailMessage, expectedEmailMessage, actualEmailMessage + " is not matched with " + expectedEmailMessage);
+        Assert.assertEquals(actualPasswordMessage, expectedPasswordMessage, actualPasswordMessage + " is not matched with " + expectedPasswordMessage);
+        Assert.assertEquals(actualConfirmPasswordMessage, expectedConfirmPasswordMessage, actualConfirmPasswordMessage + " is not matched with " + expectedConfirmPasswordMessage);
+        Assert.assertEquals(actualPIDMessage, expectedPIDMessage, actualPIDMessage + " is not matched with " + expectedPIDMessage);
+    }
+
+    @DataProvider(name = "invalid-register-data")
+    public static Object[] getInvalidRegistersData() throws IOException {
+        ObjectMapper objectMapper = new ObjectMapper();
+        List<Register> registers = objectMapper.readValue(Common.readFile(Constant.TEST_DATA_FOLDER_PATH + "invalid-register-data.json"), new TypeReference<List<Register>>() {
+        });
+        return registers.toArray();
     }
 }

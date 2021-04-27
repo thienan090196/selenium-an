@@ -27,7 +27,7 @@ public class LoginTest extends BaseTest {
         homePage.goToLoginPage();
         loginPage.login(Constant.USERNAME, Constant.PASSWORD);
 
-        String actualResult = homePage.getMessage();
+        String actualResult = homePage.getGeneralMessage();
         String expectedResult = "Welcome " + Constant.USERNAME;
 
         homePage.logout();
@@ -42,9 +42,16 @@ public class LoginTest extends BaseTest {
         homePage.goToLoginPage();
         loginPage.login(login.getEmail(), login.getPassword());
 
-        String actualResult = loginPage.getMessage();
-        String expectedResult = login.getMessage();
-        Assert.assertEquals(actualResult, expectedResult, actualResult + " is not matched with " + expectedResult);
+        String actualGeneralMessage = loginPage.getGeneralMessage();
+        String expectedGeneralMessage = login.getMessages().getGeneralMessage();
+        String actualEmailMessage = loginPage.getEmailMessage();
+        String expectedEmailMessage = login.getMessages().getEmailMessage();
+        String actualPasswordMessage = loginPage.getPasswordMessage();
+        String expectedPasswordMessage = login.getMessages().getPasswordMessage();
+
+        Assert.assertEquals(actualGeneralMessage, expectedGeneralMessage, actualGeneralMessage + " is not matched with " + expectedGeneralMessage);
+        Assert.assertEquals(actualEmailMessage, expectedEmailMessage, actualEmailMessage + " is not matched with " + expectedEmailMessage);
+        Assert.assertEquals(actualPasswordMessage, expectedPasswordMessage, actualPasswordMessage + " is not matched with " + expectedPasswordMessage);
     }
 
     @DataProvider(name = "invalid-login-data")
