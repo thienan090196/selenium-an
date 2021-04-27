@@ -1,7 +1,10 @@
 package com.logigear.helpers.web_driver_helper;
 
 import com.logigear.helpers.Constant;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
+
+import java.util.concurrent.TimeUnit;
 
 public class DriverManagerFactory {
 
@@ -15,6 +18,10 @@ public class DriverManagerFactory {
 
     public static DriverManagerFactory getInstance() {
         return instance;
+    }
+
+    public static void navigateToUrl(String url) {
+        getInstance().getDriver().get(url);
     }
 
     public WebDriver getDriver() {
@@ -34,6 +41,8 @@ public class DriverManagerFactory {
                 webDriver = new EdgeDriverManager().createWebDriver();
                 break;
         }
+        webDriver.manage().timeouts().implicitlyWait(Constant.WAIT_IMPLICITLY_TIME, TimeUnit.SECONDS);
+        webDriver.manage().window().setSize(new Dimension(Constant.DEFAULT_SCREEN_WIDTH, Constant.DEFAULT_SCREEN_HEIGHT));
         driver.set(webDriver);
     }
 

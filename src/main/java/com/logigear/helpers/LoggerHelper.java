@@ -1,4 +1,4 @@
-package com.logigear.helper;
+package com.logigear.helpers;
 
 import org.apache.log4j.Logger;
 

@@ -1,9 +1,7 @@
 package com.logigear.page_objects;
 
-import com.logigear.helper.Constant;
-import com.logigear.helper.element_helper.Label;
+import com.logigear.elements.Label;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 
 public class RegisterConfirmPage extends BasePage {
 
@@ -12,7 +10,7 @@ public class RegisterConfirmPage extends BasePage {
 
     //Methods
     @Override
-    public String getMessages() {
+    public String getMessage() {
         return this.lblSuccessfulMessage.getText();
     }
 }

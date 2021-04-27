@@ -1,9 +1,9 @@
 package com.logigear.page_objects;
 
-import com.logigear.helper.element_helper.Tab;
+import com.logigear.elements.Tab;
 import org.openqa.selenium.By;
 
-public abstract class BasePage {
+public class BasePage {
 
     //Elements
 //    private final Tab tabHome = new Tab(By.cssSelector("#menu a:first-child"));
@@ -68,6 +68,8 @@ public abstract class BasePage {
         return this.tabLogout.isExisted();
     }
 
-    public abstract String getMessages();
+    public String getMessage() {
+        return "Welcome to Railway Website";
+    }
 
 }

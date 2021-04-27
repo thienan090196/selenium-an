@@ -1,18 +1,11 @@
-package com.logigear.helper;
+package com.logigear.helpers;
 
 import java.io.File;
 
 public class Common {
 
-    public static String getProjectPath() {
-        return System.getProperty("user.dir");
-    }
-
     public static File readFile(String fileName) {
-        File file = new File(Common.getProjectPath() + fileName);
-        if (file.exists()) {
-            return file;
-        }
-        return null;
+        String path = new File(fileName).getAbsolutePath();
+        return new File(path);
     }
 }

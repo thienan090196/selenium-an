@@ -1,8 +1,8 @@
 package com.logigear.page_objects;
 
-import com.logigear.helper.element_helper.Button;
-import com.logigear.helper.element_helper.Label;
-import com.logigear.helper.element_helper.TextBox;
+import com.logigear.elements.Button;
+import com.logigear.elements.Label;
+import com.logigear.elements.TextBox;
 import org.openqa.selenium.By;
 
 public class LoginPage extends BasePage {
@@ -24,7 +24,7 @@ public class LoginPage extends BasePage {
     }
 
     @Override
-    public String getMessages() {
+    public String getMessage() {
         return this.lblGeneralErrorMessage.getText() +
                 this.lblEmailErrorMessage.getText() +
                 this.lblPasswordErrorMessage.getText();

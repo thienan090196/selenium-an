@@ -7,4 +7,5 @@ public class Link extends BaseElement {
     public Link(By locator) {
         super(locator);
     }
+
 }

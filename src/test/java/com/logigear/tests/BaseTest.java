@@ -1,44 +1,33 @@
 package com.logigear.tests;
 
-import com.logigear.helper.Constant;
-import com.logigear.helper.LoggerHelper;
-import com.logigear.helper.web_driver_helper.DriverManagerFactory;
-import org.openqa.selenium.Dimension;
-import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Parameters;
-
-import java.util.concurrent.TimeUnit;
+import com.logigear.helpers.Constant;
+import com.logigear.helpers.LoggerHelper;
+import com.logigear.helpers.web_driver_helper.DriverManagerFactory;
+import org.testng.annotations.*;
 
 public class BaseTest {
 
-    private WebDriver webDriver;
-
-    @BeforeTest
+    @BeforeMethod
     @Parameters("browser")
     public void setUp(Constant.DriverType browser) {
         LoggerHelper.beginTest(browser.name());
         switch (browser) {
             case CHROME:
-                DriverManagerFactory.getInstance().setDriver(Constant.DriverType.CHROME);
+                DriverManagerFactory.getInstance().createDriver(Constant.DriverType.CHROME);
                 break;
             case FIREFOX:
-                DriverManagerFactory.getInstance().setDriver(Constant.DriverType.FIREFOX);
+                DriverManagerFactory.getInstance().createDriver(Constant.DriverType.FIREFOX);
                 break;
             default:
-                DriverManagerFactory.getInstance().setDriver(Constant.DriverType.EDGE);
+                DriverManagerFactory.getInstance().createDriver(Constant.DriverType.EDGE);
                 break;
         }
-        webDriver = DriverManagerFactory.getInstance().getDriver();
-        webDriver.manage().timeouts().implicitlyWait(Constant.WAIT_IMPLICITLY_TIME, TimeUnit.SECONDS);
-        webDriver.manage().window().setSize(new Dimension(Constant.DEFAULT_SCREEN_WIDTH, Constant.DEFAULT_SCREEN_HEIGHT));
-        webDriver.get(Constant.RAILWAY_URL);
+        DriverManagerFactory.navigateToUrl(Constant.RAILWAY_URL);
     }
 
-    @AfterTest
+    @AfterMethod
     public void tearDown() {
-        DriverManagerFactory.getInstance().closeBrowser();
+        DriverManagerFactory.getInstance().quiteDriver();
         LoggerHelper.endTest("Quitting driver...");
     }
 }

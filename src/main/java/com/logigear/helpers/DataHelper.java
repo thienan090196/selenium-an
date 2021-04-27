@@ -1,35 +1,20 @@
 package com.logigear.helpers;
 
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.javafaker.Faker;
-import com.logigear.models.Login;
-import com.logigear.models.Register;
-import org.testng.annotations.DataProvider;
 
-import java.io.IOException;
-import java.util.List;
+public class DataHelper {
 
-public class DataProviderHelper {
+    private static Faker faker = new Faker();
 
-    public static String generateRandomEmailString() {
-        Faker faker = new Faker();
-        return faker.bothify("email####@gmail.com");
+    public static String getRandomEmail() {
+        return faker.bothify("email####??@gmail.com");
     }
 
-    @DataProvider(name = "invalid-logins")
-    public static Object[] getInvalidLoginsData() throws IOException {
-        ObjectMapper objectMapper = new ObjectMapper();
-        List<Login> login = objectMapper.readValue(Common.readFile(Constant.TEST_DATA_FOLDER_PATH + "login-data/invalid-logins.json"), new TypeReference<List<Login>>() {
-        });
-        return login.toArray();
+    public static String getRandomPassword() {
+        return faker.regexify("[\\w\\d]{8,64}");
     }
 
-    @DataProvider(name = "invalid-registers")
-    public static Object[] getInvalidRegistersData() throws IOException {
-        ObjectMapper objectMapper = new ObjectMapper();
-        List<Register> registers = objectMapper.readValue(Common.readFile(Constant.TEST_DATA_FOLDER_PATH + "register-data/invalid-registers.json"), new TypeReference<List<Register>>() {
-        });
-        return registers.toArray();
+    public static String getRandomPid() {
+        return faker.regexify("[0-9]{8,20}");
     }
 }

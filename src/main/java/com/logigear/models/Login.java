@@ -35,7 +35,7 @@ public class Login {
         return message;
     }
 
-    public void setMessages(String message) {
+    public void setMessage(String message) {
         this.message = message;
     }
 }

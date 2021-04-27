@@ -1,7 +1,7 @@
 package com.logigear.page_objects;
 
-import com.logigear.helper.element_helper.Label;
-import com.logigear.helper.element_helper.Link;
+import com.logigear.elements.Label;
+import com.logigear.elements.Link;
 import org.openqa.selenium.By;
 
 public class HomePage extends BasePage {
@@ -12,7 +12,7 @@ public class HomePage extends BasePage {
 
     //Methods
     @Override
-    public String getMessages() {
+    public String getMessage() {
         return this.lblWelcomeMessage.getText();
     }
 
