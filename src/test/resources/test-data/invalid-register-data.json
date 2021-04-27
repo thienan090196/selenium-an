@@ -2,41 +2,41 @@
   {
     "description": "Register unsuccessfully with email length less than 6 characters",
     "email": "t@g.c",
-    "password": "abc@1234",
-    "confirmPassword": "abc@1234",
-    "pid": "123456789",
+    "password": "abc@123456",
+    "confirmPassword": "abc@123456",
+    "pid": "123456789012",
     "message": "There're errors in the form. Please correct the errors and try again.Invalid email length"
   },
   {
     "description": "Register unsuccessfully with email length more than 32 characters",
     "email": "maxemaillengthtestrailway@gmail.com",
-    "password": "abc@1234",
-    "confirmPassword": "abc@1234",
-    "pid": "123456789",
+    "password": "abc@123456",
+    "confirmPassword": "abc@123456",
+    "pid": "123456789012",
     "message": "There're errors in the form. Please correct the errors and try again.Invalid email length"
   },
   {
     "description": "Register unsuccessfully with exist email",
     "email": "testrailway01@gmail.com",
-    "password": "abc@1234",
-    "confirmPassword": "abc@1234",
-    "pid": "123456789",
+    "password": "abc@123456",
+    "confirmPassword": "abc@123456",
+    "pid": "123456789012",
     "message": "This email address is already in use."
   },
   {
     "description": "Register unsuccessfully with invalid email format",
     "email": "testrailway01",
-    "password": "abc@1234",
-    "confirmPassword": "abc@1234",
-    "pid": "123456789",
+    "password": "abc@123456",
+    "confirmPassword": "abc@123456",
+    "pid": "123456789012",
     "message": "There're errors in the form. Please correct the errors and try again.Invalid email addressss"
   },
   {
     "description": "Register unsuccessfully with blank email",
     "email": "",
-    "password": "abc@1234",
-    "confirmPassword": "abc@1234",
-    "pid": "123456789",
+    "password": "abc@123456",
+    "confirmPassword": "abc@123456",
+    "pid": "123456789012",
     "message": "There're errors in the form. Please correct the errors and try again.Invalid email length"
   },
   {
@@ -44,7 +44,7 @@
     "email": "testrailway01@gmail.com",
     "password": "abc@123",
     "confirmPassword": "abc@123",
-    "pid": "123456789",
+    "pid": "123456789012",
     "message": "There're errors in the form. Please correct the errors and try again.Invalid password length"
   },
   {
@@ -52,7 +52,7 @@
     "email": "testrailway01@gmail.com",
     "password": "maxpasswordlengthtest123456789012maxpasswordlengthtest123456789012",
     "confirmPassword": "maxpasswordlengthtest123456789012maxpasswordlengthtest123456789012",
-    "pid": "123456789",
+    "pid": "123456789012",
     "message": "There're errors in the form. Please correct the errors and try again.Invalid password length"
   },
   {
@@ -60,38 +60,38 @@
     "email": "testrailway01@gmail.com",
     "password": "",
     "confirmPassword": "",
-    "pid": "123456789",
+    "pid": "123456789012",
     "message": "There're errors in the form. Please correct the errors and try again.Invalid password length"
   },
   {
     "description": "Register unsuccessfully with password not match confirm password",
     "email": "testrailway01@gmail.com",
-    "password": "abc@1234",
-    "confirmPassword": "abc@123",
-    "pid": "123456789",
+    "password": "abc@123456",
+    "confirmPassword": "abc@12345",
+    "pid": "123456789012",
     "message": "There're errors in the form. Please correct the errors and try again.The two passwords do not match"
   },
   {
     "description": "Register unsuccessfully with pid length less than 8 characters",
     "email": "testrailway01@gmail.com",
-    "password": "abc@1234",
-    "confirmPassword": "abc@1234",
+    "password": "abc@123456",
+    "confirmPassword": "abc@123456",
     "pid": "12345",
     "message": "There're errors in the form. Please correct the errors and try again.Invalid ID length"
   },
   {
     "description": "Register unsuccessfully with pid length more than 20 characters",
     "email": "testrailway01@gmail.com",
-    "password": "abc@1234",
-    "confirmPassword": "abc@1234",
+    "password": "abc@123456",
+    "confirmPassword": "abc@123456",
     "pid": "1234567890123456789012345",
     "message": "There're errors in the form. Please correct the errors and try again.Invalid ID length"
   },
   {
     "description": "Register unsuccessfully with blank pid",
     "email": "testrailway01@gmail.com",
-    "password": "abc@1234",
-    "confirmPassword": "abc@1234",
+    "password": "abc@123456",
+    "confirmPassword": "abc@123456",
     "pid": "",
     "message": "There're errors in the form. Please correct the errors and try again.Invalid ID length"
   },
