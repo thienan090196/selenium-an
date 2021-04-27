@@ -1,4 +1,4 @@
-package com.logigear.helpers.element_helper;
+package com.logigear.elements;
 
 import com.logigear.helpers.Constant;
 import com.logigear.helpers.web_driver_helper.DriverManagerFactory;
