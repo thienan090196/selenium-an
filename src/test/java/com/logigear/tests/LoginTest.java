@@ -29,7 +29,9 @@ public class LoginTest extends BaseTest {
 
         String actualResult = homePage.getMessage();
         String expectedResult = "Welcome " + Constant.USERNAME;
-        LoggerHelper.info("Actual result: " + actualResult + "---" + "Expected result: " + expectedResult);
+
+        homePage.logout();
+
         Assert.assertEquals(actualResult, expectedResult, actualResult + " is not matched with " + expectedResult);
     }
 
@@ -42,7 +44,6 @@ public class LoginTest extends BaseTest {
 
         String actualResult = loginPage.getMessage();
         String expectedResult = login.getMessage();
-        LoggerHelper.info("Actual result: " + actualResult + "---" + "Expected result: " + expectedResult);
         Assert.assertEquals(actualResult, expectedResult, actualResult + " is not matched with " + expectedResult);
     }
 

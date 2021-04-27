@@ -46,7 +46,6 @@ public class RegisterTest extends BaseTest {
         RegisterConfirmPage registerConfirmPage = new RegisterConfirmPage();
         String actualResult = registerConfirmPage.getMessage();
         String expectedResult = "Registration Confirmed! You can now log in to the site.";
-        LoggerHelper.info("Actual result: " + actualResult + "---" + "Expected result: " + expectedResult);
         Assert.assertEquals(actualResult, expectedResult, actualResult + " is not matched with " + expectedResult);
     }
 
@@ -59,7 +58,6 @@ public class RegisterTest extends BaseTest {
 
         String actualResult = registerPage.getMessage();
         String expectedResult = register.getMessage();
-        LoggerHelper.info("Actual result: " + actualResult + "---" + "Expected result: " + expectedResult);
         Assert.assertEquals(actualResult, expectedResult, actualResult + " is not matched with " + expectedResult);
     }
 }
