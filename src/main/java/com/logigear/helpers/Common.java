@@ -1,7 +1,5 @@
 package com.logigear.helper;
 
-import com.github.javafaker.Faker;
-
 import java.io.File;
 
 public class Common {
@@ -17,10 +15,4 @@ public class Common {
         }
         return null;
     }
-
-    public static String generateRandomEmailString() {
-        Faker faker = new Faker();
-        return faker.bothify("email####@gmail.com");
-    }
-
 }

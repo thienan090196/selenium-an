@@ -1,8 +1,0 @@
-[
-  {
-    "description": "Login successfully with valid email and password",
-    "email": "testrailway01@gmail.com",
-    "password": "abc@1234",
-    "message": "Welcome testrailway01@gmail.com"
-  }
-]

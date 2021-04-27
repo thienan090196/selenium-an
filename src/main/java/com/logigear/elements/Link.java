@@ -1,4 +1,4 @@
-package com.logigear.helper.element_helper;
+package com.logigear.elements;
 
 import org.openqa.selenium.By;
 

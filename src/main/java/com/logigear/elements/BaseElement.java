@@ -1,7 +1,7 @@
-package com.logigear.helper.element_helper;
+package com.logigear.helpers.element_helper;
 
-import com.logigear.helper.Constant;
-import com.logigear.helper.web_driver_helper.DriverManagerFactory;
+import com.logigear.helpers.Constant;
+import com.logigear.helpers.web_driver_helper.DriverManagerFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;

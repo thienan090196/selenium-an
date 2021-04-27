@@ -1,7 +1,8 @@
-package com.logigear.helper;
+package com.logigear.helpers;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.github.javafaker.Faker;
 import com.logigear.models.Login;
 import com.logigear.models.Register;
 import org.testng.annotations.DataProvider;
@@ -11,12 +12,9 @@ import java.util.List;
 
 public class DataProviderHelper {
 
-    @DataProvider(name = "valid-login")
-    public static Object[] getValidLoginData() throws IOException {
-        ObjectMapper objectMapper = new ObjectMapper();
-        List<Login> logins = objectMapper.readValue(Common.readFile(Constant.TEST_DATA_FOLDER_PATH + "login-data/valid-login.json"), new TypeReference<List<Login>>() {
-        });
-        return logins.toArray();
+    public static String generateRandomEmailString() {
+        Faker faker = new Faker();
+        return faker.bothify("email####@gmail.com");
     }
 
     @DataProvider(name = "invalid-logins")
@@ -25,14 +23,6 @@ public class DataProviderHelper {
         List<Login> login = objectMapper.readValue(Common.readFile(Constant.TEST_DATA_FOLDER_PATH + "login-data/invalid-logins.json"), new TypeReference<List<Login>>() {
         });
         return login.toArray();
-    }
-
-    @DataProvider(name = "valid-register")
-    public static Object[] getValidRegisterData() throws IOException {
-        ObjectMapper objectMapper = new ObjectMapper();
-        List<Register> registers = objectMapper.readValue(Common.readFile(Constant.TEST_DATA_FOLDER_PATH + "register-data/valid-register.json"), new TypeReference<List<Register>>() {
-        });
-        return registers.toArray();
     }
 
     @DataProvider(name = "invalid-registers")

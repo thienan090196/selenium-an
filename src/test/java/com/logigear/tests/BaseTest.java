@@ -18,7 +18,7 @@ public class BaseTest {
     @BeforeTest
     @Parameters("browser")
     public void setUp(Constant.DriverType browser) {
-        LoggerHelper.info("Start " + browser + "...");
+        LoggerHelper.beginTest(browser.name());
         switch (browser) {
             case CHROME:
                 DriverManagerFactory.getInstance().setDriver(Constant.DriverType.CHROME);
@@ -39,7 +39,6 @@ public class BaseTest {
     @AfterTest
     public void tearDown() {
         DriverManagerFactory.getInstance().closeBrowser();
-        LoggerHelper.info("Quitting driver...");
+        LoggerHelper.endTest("Quitting driver...");
     }
-
 }

@@ -32,17 +32,17 @@ public class LoginTest extends BaseTest {
         Assert.assertEquals(actualResult, expectedResult, actualResult + " is not matched with " + expectedResult);
     }
 
-    @Test(dataProvider = "invalid-logins", dataProviderClass = DataProviderHelper.class, description = "Login unsuccessfully with invalid data")
-    public void TC02(Login login) {
-        LoggerHelper.info(login.getDescription());
-
-        loginPage.login(login.getEmail(), login.getPassword());
-
-        String actualResult = loginPage.getMessages();
-        String expectedResult = login.getMessage();
-        LoggerHelper.info("Actual result: " + actualResult + "---" + "Expected result: " + expectedResult);
-        Assert.assertEquals(actualResult, expectedResult, actualResult + " is not matched with " + expectedResult);
-    }
+//    @Test(dataProvider = "invalid-logins", dataProviderClass = DataProviderHelper.class, description = "Login unsuccessfully with invalid data")
+//    public void TC02(Login login) {
+//        LoggerHelper.info(login.getDescription());
+//
+//        loginPage.login(login.getEmail(), login.getPassword());
+//
+//        String actualResult = loginPage.getMessages();
+//        String expectedResult = login.getMessage();
+//        LoggerHelper.info("Actual result: " + actualResult + "---" + "Expected result: " + expectedResult);
+//        Assert.assertEquals(actualResult, expectedResult, actualResult + " is not matched with " + expectedResult);
+//    }
 
     @AfterMethod
     public void afterMethod() {
