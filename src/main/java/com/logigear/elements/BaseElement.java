@@ -2,10 +2,13 @@ package com.logigear.elements;
 
 import com.logigear.helpers.Constant;
 import com.logigear.helpers.web_driver_helper.DriverManagerFactory;
+import io.github.bonigarcia.wdm.SeleniumServerStandaloneManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
@@ -63,8 +66,15 @@ public class BaseElement {
         js.executeScript("arguments[0].scrollIntoView(true);", findElement());
     }
 
-    public void waitForElementExist() {
+    public void waitForElementVisible() {
         WebDriverWait webDriverWait = new WebDriverWait(DriverManagerFactory.getInstance().getDriver(), Constant.WAIT_ELEMENT_TIME);
-        webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+        if (isExisted()) {
+            webDriverWait.until(ExpectedConditions.visibilityOf(findElement()));
+        }
+    }
+
+    public void waitForElementInVisible() {
+        WebDriverWait webDriverWait = new WebDriverWait(DriverManagerFactory.getInstance().getDriver(), Constant.WAIT_ELEMENT_TIME);
+        webDriverWait.until(ExpectedConditions.invisibilityOf(findElement()));
     }
 }

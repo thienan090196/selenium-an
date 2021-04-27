@@ -9,8 +9,8 @@ public class Dropdown extends BaseElement {
         super(locator);
     }
 
-    public void selectDropdownValue(String value) {
+    public void selectDropdownByText(String value) {
         Select select = new Select(findElement());
-        select.selectByValue(value);
+        select.selectByVisibleText(value);
     }
 }

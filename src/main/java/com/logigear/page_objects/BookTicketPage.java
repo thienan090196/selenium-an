@@ -15,14 +15,17 @@ public class BookTicketPage extends BasePage {
     private final Dropdown ddlTicketAmount = new Dropdown(By.cssSelector("[name=TicketAmount]"));
     private final Button btnBookTicket = new Button(By.cssSelector("input[value='Book ticket']"));
     private final Label lblSuccessfulMessage = new Label(By.cssSelector("#content h1"));
+    private final Label lblReloadMessage = new Label(By.cssSelector("#ArriveStation [href='http://somee.com']"));
 
     //Methods
     public void bookNewTicket(String departDate, String departFrom, String arriveAt, String seatType, String ticketAmount) {
-        this.ddlDepartDate.selectDropdownValue(departDate);
-        this.ddlDepartFrom.selectDropdownValue(departFrom);
-        this.ddlArriveAt.selectDropdownValue(arriveAt);
-        this.ddlSeatType.selectDropdownValue(seatType);
-        this.ddlTicketAmount.selectDropdownValue(ticketAmount);
+        this.ddlDepartDate.selectDropdownByText(departDate);
+        this.ddlDepartFrom.selectDropdownByText(departFrom);
+        this.lblReloadMessage.waitForElementVisible();
+        this.ddlArriveAt.selectDropdownByText(arriveAt);
+        this.ddlSeatType.selectDropdownByText(seatType);
+        this.ddlTicketAmount.selectDropdownByText(ticketAmount);
+        this.btnBookTicket.scrollToView();
         this.btnBookTicket.click();
     }
 
