@@ -24,11 +24,26 @@ public class DriverManagerFactory {
         getInstance().getDriver().get(url);
     }
 
+    public static void doActionOnPopup(PopupAction action, String... text) {
+        switch (action) {
+            case ACCEPT:
+                getInstance().getDriver().switchTo().alert().accept();
+                break;
+            case SUBMIT_TEXT:
+                getInstance().getDriver().switchTo().alert().sendKeys(text.toString());
+                break;
+            case GET_TEXT:
+                getInstance().getDriver().switchTo().alert().getText();
+            default:
+                getInstance().getDriver().switchTo().alert().dismiss();
+        }
+    }
+
     public WebDriver getDriver() {
         return driver.get();
     }
 
-    public void createDriver(Constant.DriverType driverType) {
+    public void createDriver(Constant.DRIVER_TYPE driverType) {
         WebDriver webDriver;
         switch (driverType) {
             case CHROME:
@@ -41,13 +56,17 @@ public class DriverManagerFactory {
                 webDriver = new EdgeDriverManager().createWebDriver();
                 break;
         }
-        webDriver.manage().timeouts().implicitlyWait(Constant.WAIT_IMPLICITLY_TIME, TimeUnit.SECONDS);
+        webDriver.manage().timeouts().implicitlyWait(Constant.IMPLICITLY_WAIT_TIME, TimeUnit.SECONDS);
         webDriver.manage().window().setSize(new Dimension(Constant.DEFAULT_SCREEN_WIDTH, Constant.DEFAULT_SCREEN_HEIGHT));
         driver.set(webDriver);
     }
 
-    public void quiteDriver() {
+    public void quitDriver() {
         driver.get().quit();
         driver.remove();
+    }
+
+    public enum PopupAction {
+        ACCEPT, DISMISS, SUBMIT_TEXT, GET_TEXT
     }
 }

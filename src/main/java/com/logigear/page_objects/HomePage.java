@@ -4,8 +4,6 @@ import com.logigear.elements.Label;
 import com.logigear.elements.Link;
 import org.openqa.selenium.By;
 
-import java.util.HashMap;
-
 public class HomePage extends BasePage {
 
     //Elements
@@ -13,8 +11,7 @@ public class HomePage extends BasePage {
     private final Link lnkCreateAccount = new Link(By.cssSelector("#content a[href='/Account/Register.cshtml']"));
 
     //Methods
-    @Override
-    public String getGeneralMessage() {
+    public String getWelcomeMessage() {
         return this.lblWelcomeMessage.getText();
     }
 

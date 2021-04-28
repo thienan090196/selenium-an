@@ -3,9 +3,8 @@ package com.logigear.page_objects;
 import com.logigear.elements.Button;
 import com.logigear.elements.Label;
 import com.logigear.elements.TextBox;
+import com.logigear.models.Account;
 import org.openqa.selenium.By;
-
-import java.util.HashMap;
 
 public class LoginPage extends BasePage {
 
@@ -18,23 +17,22 @@ public class LoginPage extends BasePage {
     private final Label lblPasswordErrorMessage = new Label(By.cssSelector("[for=password].validation-error"));
 
     //Methods
-    public void login(String email, String password) {
-        this.txtEmail.enterText(email);
-        this.txtPassword.enterText(password);
+    public void login(Account account) {
+        this.txtEmail.enterText(account.getEmail());
+        this.txtPassword.enterText(account.getPassword());
         this.btnLogin.scrollToView();
-        this.btnLogin.click();
+        this.btnLogin.submit();
     }
 
-    @Override
-    public String getGeneralMessage() {
+    public String getGeneralErrorMessage() {
         return this.lblGeneralErrorMessage.getText();
     }
 
-    public String getEmailMessage() {
+    public String getEmailErrorMessage() {
         return this.lblEmailErrorMessage.getText();
     }
 
-    public String getPasswordMessage() {
+    public String getPasswordErrorMessage() {
         return this.lblPasswordErrorMessage.getText();
     }
 }

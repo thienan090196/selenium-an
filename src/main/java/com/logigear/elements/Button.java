@@ -8,4 +8,8 @@ public class Button extends BaseElement {
         super(locator);
     }
 
+    public void submit() {
+        findElement().submit();
+    }
+
 }

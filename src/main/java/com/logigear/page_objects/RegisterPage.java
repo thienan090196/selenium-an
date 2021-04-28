@@ -3,6 +3,7 @@ package com.logigear.page_objects;
 import com.logigear.elements.Button;
 import com.logigear.elements.Label;
 import com.logigear.elements.TextBox;
+import com.logigear.models.Account;
 import org.openqa.selenium.By;
 
 public class RegisterPage extends BasePage {
@@ -13,7 +14,7 @@ public class RegisterPage extends BasePage {
     private final TextBox txtConfirmPassword = new TextBox(By.cssSelector("input#confirmPassword"));
     private final TextBox txtPID = new TextBox(By.cssSelector("input#pid"));
     private final Button btnRegister = new Button(By.cssSelector("input[title='Register']"));
-    private final Label lblSuccessfulMessage = new Label(By.cssSelector("#content p"));
+    private final Label lblSuccessMessage = new Label(By.cssSelector("#content p"));
     private final Label lblGeneralErrorMessage = new Label(By.cssSelector(".message.error"));
     private final Label lblEmailErrorMessage = new Label(By.cssSelector("[for=email].validation-error"));
     private final Label lblPasswordErrorMessage = new Label(By.cssSelector("[for=password].validation-error"));
@@ -21,33 +22,35 @@ public class RegisterPage extends BasePage {
     private final Label lblPIDErrorMessage = new Label(By.cssSelector("[for=pid].validation-error"));
 
     //Methods
-    public void register(String email, String password, String confirmPassword, String pid) {
-        this.txtEmail.enterText(email);
-        this.txtPassword.enterText(password);
-        this.txtConfirmPassword.enterText(confirmPassword);
-        this.txtPID.enterText(pid);
-        this.btnRegister.scrollToView();
-        this.btnRegister.click();
+    public void register(Account account) {
+        this.txtEmail.enterText(account.getEmail());
+        this.txtPassword.enterText(account.getPassword());
+        this.txtConfirmPassword.enterText(account.getConfirmPassword());
+        this.txtPID.enterText(account.getPid());
+        this.btnRegister.submit();
     }
 
-    @Override
-    public String getGeneralMessage() {
-        return this.lblGeneralErrorMessage.isExisted() ? this.lblGeneralErrorMessage.getText() : this.lblSuccessfulMessage.getText();
+    public String getSuccessMessage() {
+        return this.lblSuccessMessage.getText();
     }
 
-    public String getEmailMessage() {
+    public String getGeneralErrorMessage() {
+        return this.lblGeneralErrorMessage.getText();
+    }
+
+    public String getEmailErrorMessage() {
         return this.lblEmailErrorMessage.getText();
     }
 
-    public String getPasswordMessage() {
+    public String getPasswordErrorMessage() {
         return this.lblPasswordErrorMessage.getText();
     }
 
-    public String getConfirmPasswordMessage() {
+    public String getConfirmPasswordErrorMessage() {
         return this.lblConfirmPasswordErrorMessage.getText();
     }
 
-    public String getPIDMessage() {
+    public String getPIDErrorMessage() {
         return this.lblPIDErrorMessage.getText();
     }
 

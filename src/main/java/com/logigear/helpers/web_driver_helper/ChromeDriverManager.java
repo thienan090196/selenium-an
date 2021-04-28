@@ -11,5 +11,4 @@ public class ChromeDriverManager {
         WebDriverManager.chromedriver().setup();
         return new ChromeDriver();
     }
-
 }

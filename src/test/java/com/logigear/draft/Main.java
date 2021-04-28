@@ -1,15 +1,13 @@
 package com.logigear.draft;
 
-import com.github.javafaker.Faker;
-import com.logigear.helpers.Constant;
+import com.logigear.helpers.DataHelper;
 
-import java.io.File;
+import java.text.ParseException;
 
 public class Main {
 
-    public static void main(String[] args) {
-        Faker faker = new Faker();
-        System.out.println(faker.regexify("[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{1,3}"));
+    public static void main(String[] args) throws ParseException {
+//        System.out.println(DataHelper.getDateValueWithPlusDays(3));
     }
 
 }

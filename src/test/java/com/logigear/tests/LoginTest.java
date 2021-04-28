@@ -5,7 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.logigear.helpers.Common;
 import com.logigear.helpers.Constant;
 import com.logigear.helpers.LoggerHelper;
-import com.logigear.models.Login;
+import com.logigear.models.Account;
 import com.logigear.page_objects.HomePage;
 import com.logigear.page_objects.LoginPage;
 import org.testng.Assert;
@@ -20,46 +20,43 @@ public class LoginTest extends BaseTest {
     private HomePage homePage = new HomePage();
     private LoginPage loginPage = new LoginPage();
 
+    @DataProvider(name = "invalidLoginData")
+    public static Object[] getInvalidLoginsData() throws IOException {
+        ObjectMapper objectMapper = new ObjectMapper();
+        List<Account> accounts = objectMapper.readValue(Common.readFile(Constant.TEST_DATA_FOLDER_PATH + "invalid-login-data.json"), new TypeReference<List<Account>>() {
+        });
+        return accounts.toArray();
+    }
+
     @Test(description = "Login successfully with valid email and password")
     public void TC01() {
         LoggerHelper.info("Login successfully with valid email and password");
 
         homePage.goToLoginPage();
-        loginPage.login(Constant.USERNAME, Constant.PASSWORD);
+        Account account = new Account(Constant.USERNAME, Constant.PASSWORD);
+        loginPage.login(account);
 
-        String actualResult = homePage.getGeneralMessage();
-        String expectedResult = "Welcome " + Constant.USERNAME;
-
-        homePage.logout();
-
+        String actualResult = homePage.getWelcomeMessage();
+        String expectedResult = "Welcome " + account.getEmail();
         Assert.assertEquals(actualResult, expectedResult, actualResult + " is not matched with " + expectedResult);
     }
 
-    @Test(dataProvider = "invalid-login-data", description = "Login unsuccessfully with invalid data")
-    public void TC02(Login login) {
-        LoggerHelper.info(login.getDescription());
+    @Test(dataProvider = "invalidLoginData", description = "Login unsuccessfully with invalid data")
+    public void TC02(Account account) {
+        LoggerHelper.info(account.getDescription());
 
         homePage.goToLoginPage();
-        loginPage.login(login.getEmail(), login.getPassword());
+        loginPage.login(account);
 
-        String actualGeneralMessage = loginPage.getGeneralMessage();
-        String expectedGeneralMessage = login.getMessages().getGeneralMessage();
-        String actualEmailMessage = loginPage.getEmailMessage();
-        String expectedEmailMessage = login.getMessages().getEmailMessage();
-        String actualPasswordMessage = loginPage.getPasswordMessage();
-        String expectedPasswordMessage = login.getMessages().getPasswordMessage();
+        String actualGeneralMessage = loginPage.getGeneralErrorMessage();
+        String expectedGeneralMessage = account.getMessages().getGeneralMessage();
+        String actualEmailMessage = loginPage.getEmailErrorMessage();
+        String expectedEmailMessage = account.getMessages().getEmailMessage();
+        String actualPasswordMessage = loginPage.getPasswordErrorMessage();
+        String expectedPasswordMessage = account.getMessages().getPasswordMessage();
 
         Assert.assertEquals(actualGeneralMessage, expectedGeneralMessage, actualGeneralMessage + " is not matched with " + expectedGeneralMessage);
         Assert.assertEquals(actualEmailMessage, expectedEmailMessage, actualEmailMessage + " is not matched with " + expectedEmailMessage);
         Assert.assertEquals(actualPasswordMessage, expectedPasswordMessage, actualPasswordMessage + " is not matched with " + expectedPasswordMessage);
     }
-
-    @DataProvider(name = "invalid-login-data")
-    public static Object[] getInvalidLoginsData() throws IOException {
-        ObjectMapper objectMapper = new ObjectMapper();
-        List<Login> login = objectMapper.readValue(Common.readFile(Constant.TEST_DATA_FOLDER_PATH + "invalid-login-data.json"), new TypeReference<List<Login>>() {
-        });
-        return login.toArray();
-    }
-
 }

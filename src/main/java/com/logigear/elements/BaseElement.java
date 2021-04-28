@@ -2,14 +2,10 @@ package com.logigear.elements;
 
 import com.logigear.helpers.Constant;
 import com.logigear.helpers.web_driver_helper.DriverManagerFactory;
-import io.github.bonigarcia.wdm.SeleniumServerStandaloneManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.TimeoutException;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.FluentWait;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
 
@@ -34,47 +30,39 @@ public class BaseElement {
     }
 
     public String getText() {
-        if (isExisted()) {
+        try {
             return findElement().getText();
+        } catch (NoSuchElementException e) {
+            return Constant.BLANK_STRING;
         }
-        return Constant.BLANK_STRING;
     }
 
     public boolean isDisplayed() {
-        return findElement().isDisplayed();
-    }
-
-    public boolean isExisted() {
-        return !findElements().isEmpty();
+        try {
+            return findElement().isDisplayed();
+        } catch (NoSuchElementException e) {
+            return false;
+        }
     }
 
     public boolean isEnabled() {
-        return findElement().isEnabled();
+        try {
+            return findElement().isEnabled();
+        } catch (NoSuchElementException e) {
+            return false;
+        }
     }
 
     public boolean isSelected() {
-        return findElement().isDisplayed();
-    }
-
-    public void disableElement() {
-        JavascriptExecutor js = (JavascriptExecutor) DriverManagerFactory.getInstance().getDriver();
-        js.executeScript("arguments[0].setAttribute('style', 'display:none')", findElement());
+        try {
+            return findElement().isSelected();
+        } catch (NoSuchElementException e) {
+            return false;
+        }
     }
 
     public void scrollToView() {
         JavascriptExecutor js = (JavascriptExecutor) DriverManagerFactory.getInstance().getDriver();
         js.executeScript("arguments[0].scrollIntoView(true);", findElement());
-    }
-
-    public void waitForElementVisible() {
-        WebDriverWait webDriverWait = new WebDriverWait(DriverManagerFactory.getInstance().getDriver(), Constant.WAIT_ELEMENT_TIME);
-        if (isExisted()) {
-            webDriverWait.until(ExpectedConditions.visibilityOf(findElement()));
-        }
-    }
-
-    public void waitForElementInVisible() {
-        WebDriverWait webDriverWait = new WebDriverWait(DriverManagerFactory.getInstance().getDriver(), Constant.WAIT_ELEMENT_TIME);
-        webDriverWait.until(ExpectedConditions.invisibilityOf(findElement()));
     }
 }

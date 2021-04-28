@@ -11,5 +11,4 @@ public class EdgeDriverManager {
         WebDriverManager.edgedriver().setup();
         return new EdgeDriver();
     }
-
 }

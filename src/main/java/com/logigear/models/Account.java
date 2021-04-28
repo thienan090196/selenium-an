@@ -1,6 +1,6 @@
 package com.logigear.models;
 
-public class Register {
+public class Account {
 
     private String description;
     private String email;
@@ -8,6 +8,14 @@ public class Register {
     private String confirmPassword;
     private String pid;
     private Message messages;
+
+    public Account() {
+    }
+
+    public Account(String email, String password) {
+        this.email = email;
+        this.password = password;
+    }
 
     public String getDescription() {
         return description;

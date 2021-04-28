@@ -1,13 +1,11 @@
 package com.logigear.page_objects;
 
 import com.logigear.elements.Button;
-import com.logigear.elements.Label;
 import org.openqa.selenium.By;
 
 public class BasePage {
 
     //Elements
-//    private final Tab tabHome = new Tab(By.cssSelector("#menu a:first-child"));
     private final Button btnHome = new Button(By.xpath("//span[text() = 'Home']//parent::a"));
     private final Button btnFAQ = new Button(By.cssSelector("a[href='/Page/FAQ.cshtml']"));
     private final Button btnContact = new Button(By.cssSelector("a[href='/Page/Contact.cshtml']"));
@@ -63,9 +61,5 @@ public class BasePage {
 
     public void logout() {
         this.btnLogout.click();
-    }
-
-    public String getGeneralMessage() {
-        return "Welcome to Railway Website";
     }
 }
