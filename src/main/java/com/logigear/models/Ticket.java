@@ -11,7 +11,6 @@ public class Ticket {
     private String expiredDate;
     private String status;
     private int totalPrice;
-    private Message messages;
 
     public String getDepartDate() {
         return departDate;
@@ -83,13 +82,5 @@ public class Ticket {
 
     public void setTotalPrice(int totalPrice) {
         this.totalPrice = totalPrice;
-    }
-
-    public Message getMessages() {
-        return messages;
-    }
-
-    public void setMessages(Message messages) {
-        this.messages = messages;
     }
 }

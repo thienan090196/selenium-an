@@ -7,12 +7,12 @@ import java.util.Date;
 
 public class LoggerHelper {
 
-    private static Logger LoggerHelper = Logger.getLogger(LoggerHelper.class.getName());
-
     static {
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd hh-mm-ss");
         System.setProperty("current.date.time", dateFormat.format(new Date()));
     }
+
+    private static Logger LoggerHelper = Logger.getLogger(LoggerHelper.class.getName());
 
     public static void beginTest(String testName) {
         LoggerHelper.info("--------------------------------");

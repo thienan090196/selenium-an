@@ -1,13 +1,12 @@
 package com.logigear.draft;
 
-import com.logigear.helpers.DataHelper;
-
 import java.text.ParseException;
+import java.util.HashMap;
 
 public class Main {
 
     public static void main(String[] args) throws ParseException {
-//        System.out.println(DataHelper.getDateValueWithPlusDays(3));
+        HashMap<String, String> abc = new HashMap<>();
     }
 
 }

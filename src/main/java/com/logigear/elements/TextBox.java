@@ -8,7 +8,7 @@ public class TextBox extends BaseElement {
         super(locator);
     }
 
-    public void enterText(CharSequence text) {
+    public void enterText(String text) {
         findElement().sendKeys(text);
     }
 }

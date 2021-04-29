@@ -7,10 +7,7 @@
     "pid": "123456789012",
     "messages": {
       "generalMessage": "There're errors in the form. Please correct the errors and try again.",
-      "emailMessage": "Invalid email length",
-      "passwordMessage": "",
-      "confirmPasswordMessage": "",
-      "pidMessage": ""
+      "emailMessage": "Invalid email length"
     }
   },
   {
@@ -21,38 +18,7 @@
     "pid": "123456789012",
     "messages": {
       "generalMessage": "There're errors in the form. Please correct the errors and try again.",
-      "emailMessage": "Invalid email length",
-      "passwordMessage": "",
-      "confirmPasswordMessage": "",
-      "pidMessage": ""
-    }
-  },
-  {
-    "description": "Register unsuccessfully with exist email",
-    "email": "testrailway01@gmail.com",
-    "password": "abc@123456",
-    "confirmPassword": "abc@123456",
-    "pid": "123456789012",
-    "messages": {
-      "generalMessage": "This email address is already in use.",
-      "emailMessage": "",
-      "passwordMessage": "",
-      "confirmPasswordMessage": "",
-      "pidMessage": ""
-    }
-  },
-  {
-    "description": "Register unsuccessfully with invalid email format",
-    "email": "testrailway01",
-    "password": "abc@123456",
-    "confirmPassword": "abc@123456",
-    "pid": "123456789012",
-    "messages": {
-      "generalMessage": "There're errors in the form. Please correct the errors and try again.",
-      "emailMessage": "Invalid email address",
-      "passwordMessage": "",
-      "confirmPasswordMessage": "",
-      "pidMessage": ""
+      "emailMessage": "Invalid email length"
     }
   },
   {
@@ -63,10 +29,7 @@
     "pid": "123456789012",
     "messages": {
       "generalMessage": "There're errors in the form. Please correct the errors and try again.",
-      "emailMessage": "Invalid email length",
-      "passwordMessage": "",
-      "confirmPasswordMessage": "",
-      "pidMessage": ""
+      "emailMessage": "Invalid email length"
     }
   },
   {
@@ -77,10 +40,7 @@
     "pid": "123456789012",
     "messages": {
       "generalMessage": "There're errors in the form. Please correct the errors and try again.",
-      "emailMessage": "",
-      "passwordMessage": "Invalid password length",
-      "confirmPasswordMessage": "",
-      "pidMessage": ""
+      "passwordMessage": "Invalid password length"
     }
   },
   {
@@ -91,10 +51,7 @@
     "pid": "123456789012",
     "messages": {
       "generalMessage": "There're errors in the form. Please correct the errors and try again.",
-      "emailMessage": "",
-      "passwordMessage": "Invalid password length",
-      "confirmPasswordMessage": "",
-      "pidMessage": ""
+      "passwordMessage": "Invalid password length"
     }
   },
   {
@@ -105,24 +62,7 @@
     "pid": "123456789012",
     "messages": {
       "generalMessage": "There're errors in the form. Please correct the errors and try again.",
-      "emailMessage": "",
-      "passwordMessage": "Invalid password length",
-      "confirmPasswordMessage": "",
-      "pidMessage": ""
-    }
-  },
-  {
-    "description": "Register unsuccessfully with password not match confirm password",
-    "email": "testrailway01@gmail.com",
-    "password": "abc@123456",
-    "confirmPassword": "abc@12345",
-    "pid": "123456789012",
-    "messages": {
-      "generalMessage": "There're errors in the form. Please correct the errors and try again.",
-      "emailMessage": "",
-      "passwordMessage": "",
-      "confirmPasswordMessage": "The two passwords do not match",
-      "pidMessage": ""
+      "passwordMessage": "Invalid password length"
     }
   },
   {
@@ -133,9 +73,6 @@
     "pid": "12345",
     "messages": {
       "generalMessage": "There're errors in the form. Please correct the errors and try again.",
-      "emailMessage": "",
-      "passwordMessage": "",
-      "confirmPasswordMessage": "",
       "pidMessage": "Invalid ID length"
     }
   },
@@ -147,9 +84,6 @@
     "pid": "1234567890123456789012345",
     "messages": {
       "generalMessage": "There're errors in the form. Please correct the errors and try again.",
-      "emailMessage": "",
-      "passwordMessage": "",
-      "confirmPasswordMessage": "",
       "pidMessage": "Invalid ID length"
     }
   },
@@ -161,9 +95,6 @@
     "pid": "",
     "messages": {
       "generalMessage": "There're errors in the form. Please correct the errors and try again.",
-      "emailMessage": "",
-      "passwordMessage": "",
-      "confirmPasswordMessage": "",
       "pidMessage": "Invalid ID length"
     }
   },
@@ -178,20 +109,6 @@
       "emailMessage": "Invalid email address",
       "passwordMessage": "Invalid password length",
       "confirmPasswordMessage": "The two passwords do not match",
-      "pidMessage": "Invalid ID length"
-    }
-  },
-  {
-    "description": "Register unsuccessfully with blank data",
-    "email": "",
-    "password": "",
-    "confirmPassword": "",
-    "pid": "",
-    "messages": {
-      "generalMessage": "There're errors in the form. Please correct the errors and try again.",
-      "emailMessage": "Invalid email length",
-      "passwordMessage": "Invalid password length",
-      "confirmPasswordMessage": "",
       "pidMessage": "Invalid ID length"
     }
   }

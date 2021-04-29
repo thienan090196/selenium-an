@@ -7,7 +7,7 @@ public class Account {
     private String password;
     private String confirmPassword;
     private String pid;
-    private Message messages;
+    private String message;
 
     public Account() {
     }
@@ -15,6 +15,13 @@ public class Account {
     public Account(String email, String password) {
         this.email = email;
         this.password = password;
+    }
+
+    public Account(String email, String password, String confirmPassword, String pid) {
+        this.email = email;
+        this.password = password;
+        this.confirmPassword = confirmPassword;
+        this.pid = pid;
     }
 
     public String getDescription() {
@@ -57,11 +64,11 @@ public class Account {
         this.pid = pid;
     }
 
-    public Message getMessages() {
-        return messages;
+    public String getMessage() {
+        return message;
     }
 
-    public void setMessages(Message messages) {
-        this.messages = messages;
+    public void setMessage(String message) {
+        this.message = message;
     }
 }

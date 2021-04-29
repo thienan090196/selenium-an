@@ -21,14 +21,12 @@ public class DataHelper {
         return faker.regexify("[0-9]{8,20}");
     }
     
-    public static String getDateFromToday(int... plusDays) {
-        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("M/d/yyyy");
-        LocalDateTime localDateTime;
-        if (plusDays.length != 0) {
-            localDateTime = LocalDateTime.now().plusDays(plusDays[0]);
-        } else {
-            localDateTime = LocalDateTime.now();
-        }
-        return dateTimeFormatter.format(localDateTime);
+    public static String getDateFromToday(int days) {
+        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern(Constant.DATE_FORMAT);
+        return dateTimeFormatter.format(LocalDateTime.now().plusDays(days));
+    }
+
+    public static String getDateToday() {
+        return getDateFromToday(0);
     }
 }

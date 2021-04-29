@@ -8,7 +8,7 @@ public class Table extends BaseElement {
         super(locator);
     }
 
-    public String getCellValueByColumnTitle(String locator, String title) {
-        return findElement().findElement(By.xpath(String.format(locator, title))).getText();
+    public String getCellValueByColumnTitle(String childLocator, String title) {
+        return findElement().findElement(By.xpath(String.format(childLocator, title))).getText();
     }
 }

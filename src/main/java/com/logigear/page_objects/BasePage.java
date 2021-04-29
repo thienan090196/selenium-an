@@ -43,7 +43,7 @@ public class BasePage {
         this.btnBookTicket.click();
     }
 
-    public void goToMyTicketPage() {
+    public void goToManageTicketPage() {
         this.btnMyTicket.click();
     }
 

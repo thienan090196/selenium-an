@@ -21,7 +21,7 @@ public class LoginPage extends BasePage {
         this.txtEmail.enterText(account.getEmail());
         this.txtPassword.enterText(account.getPassword());
         this.btnLogin.scrollToView();
-        this.btnLogin.submit();
+        this.btnLogin.click();
     }
 
     public String getGeneralErrorMessage() {

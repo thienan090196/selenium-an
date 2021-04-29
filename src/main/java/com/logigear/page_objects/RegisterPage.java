@@ -27,7 +27,8 @@ public class RegisterPage extends BasePage {
         this.txtPassword.enterText(account.getPassword());
         this.txtConfirmPassword.enterText(account.getConfirmPassword());
         this.txtPID.enterText(account.getPid());
-        this.btnRegister.submit();
+        this.btnRegister.scrollToView();
+        this.btnRegister.click();
     }
 
     public String getSuccessMessage() {

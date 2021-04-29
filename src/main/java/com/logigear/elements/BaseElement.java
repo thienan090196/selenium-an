@@ -1,11 +1,13 @@
 package com.logigear.elements;
 
 import com.logigear.helpers.Constant;
-import com.logigear.helpers.web_driver_helper.DriverManagerFactory;
+import com.logigear.helpers.DriverHelper;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
 
@@ -18,11 +20,11 @@ public class BaseElement {
     }
 
     public WebElement findElement() {
-        return DriverManagerFactory.getInstance().getDriver().findElement(locator);
+        return DriverHelper.getInstance().getDriver().findElement(locator);
     }
 
     public List<WebElement> findElements() {
-        return DriverManagerFactory.getInstance().getDriver().findElements(locator);
+        return DriverHelper.getInstance().getDriver().findElements(locator);
     }
 
     public void click() {
@@ -30,11 +32,7 @@ public class BaseElement {
     }
 
     public String getText() {
-        try {
-            return findElement().getText();
-        } catch (NoSuchElementException e) {
-            return Constant.BLANK_STRING;
-        }
+        return findElement().getText();
     }
 
     public boolean isDisplayed() {
@@ -46,23 +44,25 @@ public class BaseElement {
     }
 
     public boolean isEnabled() {
-        try {
-            return findElement().isEnabled();
-        } catch (NoSuchElementException e) {
-            return false;
-        }
+        return findElement().isEnabled();
     }
 
     public boolean isSelected() {
-        try {
-            return findElement().isSelected();
-        } catch (NoSuchElementException e) {
-            return false;
-        }
+        return findElement().isSelected();
     }
 
     public void scrollToView() {
-        JavascriptExecutor js = (JavascriptExecutor) DriverManagerFactory.getInstance().getDriver();
+        JavascriptExecutor js = (JavascriptExecutor) DriverHelper.getInstance().getDriver();
         js.executeScript("arguments[0].scrollIntoView(true);", findElement());
+    }
+
+    public void waitForAlertPresent() {
+        WebDriverWait wait = new WebDriverWait(DriverHelper.getInstance().getDriver(), Constant.EXPLICIT_ELEMENT_WAIT_TIME);
+        wait.until(ExpectedConditions.alertIsPresent());
+    }
+
+    public void waitForElementVisible() {
+        WebDriverWait wait = new WebDriverWait(DriverHelper.getInstance().getDriver(), Constant.EXPLICIT_ELEMENT_WAIT_TIME);
+        wait.until(ExpectedConditions.visibilityOf(findElement()));
     }
 }

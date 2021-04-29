@@ -1,39 +1,50 @@
 package com.logigear.tests;
 
-import com.logigear.helpers.Constant;
 import com.logigear.helpers.DataHelper;
 import com.logigear.models.Account;
 import com.logigear.models.Ticket;
 import com.logigear.page_objects.BookTicketPage;
 import com.logigear.page_objects.HomePage;
 import com.logigear.page_objects.LoginPage;
+import com.logigear.page_objects.RegisterPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class BookTicketTest extends BaseTest {
 
     private HomePage homePage = new HomePage();
+    private RegisterPage registerPage = new RegisterPage();
     private LoginPage loginPage = new LoginPage();
     private BookTicketPage bookTicketPage = new BookTicketPage();
+    //Ticket data
+    private String departStation = "Phan Thiết";
+    private String arriveStation = "Đà Nẵng";
+    private String seatType = "Hard bed";
+    private int pricePerOneTicket = 340000;
 
-    @Test(description = "Book ticket successfully with valid data")
+    @Test(description = "Book one ticket successfully with valid data")
     public void TC01() {
+        homePage.goToRegisterPage();
+        Account account = new Account();
+        account.setEmail(DataHelper.getRandomEmail());
+        account.setPassword(DataHelper.getRandomPassword());
+        account.setConfirmPassword(account.getPassword());
+        account.setPid(DataHelper.getRandomPid());
+        registerPage.register(account);
         homePage.goToLoginPage();
-
-        Account account = new Account(Constant.USERNAME, Constant.PASSWORD);
         loginPage.login(account);
+        homePage.goToBookTicketPage();
 
         Ticket expectedTicket = new Ticket();
-        expectedTicket.setDepartFrom(Constant.departStation);
-        expectedTicket.setArriveAt(Constant.arriveStation);
-        expectedTicket.setSeatType(Constant.seatType);
+        expectedTicket.setDepartFrom(departStation);
+        expectedTicket.setArriveAt(arriveStation);
+        expectedTicket.setSeatType(seatType);
         expectedTicket.setDepartDate(DataHelper.getDateFromToday(4));
-        expectedTicket.setBookDate(DataHelper.getDateFromToday());
+        expectedTicket.setBookDate(DataHelper.getDateToday());
         expectedTicket.setExpiredDate(DataHelper.getDateFromToday(3));
         expectedTicket.setTicketAmount(1);
-        expectedTicket.setTotalPrice(Constant.pricePerOneTicket * expectedTicket.getTicketAmount());
+        expectedTicket.setTotalPrice(pricePerOneTicket * expectedTicket.getTicketAmount());
 
-        homePage.goToBookTicketPage();
         bookTicketPage.bookNewTicket(expectedTicket);
 
         String actualResult = bookTicketPage.getSuccessMessage();

@@ -4,10 +4,9 @@ import com.logigear.elements.Button;
 import com.logigear.elements.Dropdown;
 import com.logigear.elements.Label;
 import com.logigear.elements.Table;
+import com.logigear.enums.HeaderTitle;
 import com.logigear.models.Ticket;
 import org.openqa.selenium.By;
-
-import java.util.HashMap;
 
 public class BookTicketPage extends BasePage {
 
@@ -24,12 +23,13 @@ public class BookTicketPage extends BasePage {
 
     //Methods
     public void bookNewTicket(Ticket ticket) {
+        this.btnBookTicket.scrollToView();
         this.ddlDepartFrom.selectDropdownByText(ticket.getDepartFrom());
-        this.ddlDepartDate.selectDropdownByText(ticket.getDepartDate().toString());
+        this.ddlDepartDate.selectDropdownByText(ticket.getDepartDate());
         this.ddlSeatType.selectDropdownByText(ticket.getSeatType());
         this.ddlTicketAmount.selectDropdownByText(String.valueOf(ticket.getTicketAmount()));
         this.ddlArriveAt.selectDropdownByText(ticket.getArriveAt());
-        this.btnBookTicket.submit();
+        this.btnBookTicket.click();
     }
 
     public String getSuccessMessage() {
@@ -38,14 +38,14 @@ public class BookTicketPage extends BasePage {
 
     public Ticket getBookedTicketInformation() {
         Ticket ticket = new Ticket();
-        ticket.setDepartFrom(this.tblTicketInformation.getCellValueByColumnTitle(this.cellLocator, "Depart Station"));
-        ticket.setArriveAt(this.tblTicketInformation.getCellValueByColumnTitle(this.cellLocator, "Arrive Station"));
-        ticket.setSeatType(this.tblTicketInformation.getCellValueByColumnTitle(this.cellLocator, "Seat Type"));
-        ticket.setDepartDate(this.tblTicketInformation.getCellValueByColumnTitle(this.cellLocator, "Depart Date"));
-        ticket.setBookDate(this.tblTicketInformation.getCellValueByColumnTitle(this.cellLocator, "Book Date"));
-        ticket.setExpiredDate(this.tblTicketInformation.getCellValueByColumnTitle(this.cellLocator, "Expired Date"));
-        ticket.setTicketAmount(Integer.parseInt(this.tblTicketInformation.getCellValueByColumnTitle(this.cellLocator, "Amount")));
-        ticket.setTotalPrice(Integer.parseInt(this.tblTicketInformation.getCellValueByColumnTitle(this.cellLocator, "Total Price")));
+        ticket.setDepartFrom(this.tblTicketInformation.getCellValueByColumnTitle(this.cellLocator, HeaderTitle.DEPART_STATION.value));
+        ticket.setArriveAt(this.tblTicketInformation.getCellValueByColumnTitle(this.cellLocator, HeaderTitle.ARRIVE_STATION.value));
+        ticket.setSeatType(this.tblTicketInformation.getCellValueByColumnTitle(this.cellLocator, HeaderTitle.SEAT_TYPE.value));
+        ticket.setDepartDate(this.tblTicketInformation.getCellValueByColumnTitle(this.cellLocator, HeaderTitle.DEPART_DATE.value));
+        ticket.setBookDate(this.tblTicketInformation.getCellValueByColumnTitle(this.cellLocator, HeaderTitle.BOOK_DATE.value));
+        ticket.setExpiredDate(this.tblTicketInformation.getCellValueByColumnTitle(this.cellLocator, HeaderTitle.EXPIRED_DATE.value));
+        ticket.setTicketAmount(Integer.parseInt(this.tblTicketInformation.getCellValueByColumnTitle(this.cellLocator, HeaderTitle.TICKET_AMOUNT.value)));
+        ticket.setTotalPrice(Integer.parseInt(this.tblTicketInformation.getCellValueByColumnTitle(this.cellLocator, HeaderTitle.TOTAL_PRICE.value)));
         return ticket;
     }
 }
