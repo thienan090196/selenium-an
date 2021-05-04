@@ -20,6 +20,8 @@ public class BookTicketPage extends BasePage {
     private final Label lblSuccessMessage = new Label(By.cssSelector("#content h1"));
     private final Table tblTicketInformation = new Table(By.cssSelector(".MyTable.WideTable"));
     private final String cellLocator = "//td[count(//th[text()='%s']/preceding-sibling::th)+1]";
+    private final Label lblGeneralErrorMessage = new Label(By.cssSelector(".message.error"));
+    private final Label lblTicketAmountErrorMessage = new Label(By.cssSelector(".validation-error"));
 
     //Methods
     public void bookNewTicket(Ticket ticket) {
@@ -34,6 +36,14 @@ public class BookTicketPage extends BasePage {
 
     public String getSuccessMessage() {
         return this.lblSuccessMessage.getText();
+    }
+
+    public String getGeneralErrorMessage() {
+        return this.lblGeneralErrorMessage.getText();
+    }
+
+    public String getTicketAmountErrorMessage() {
+        return this.lblTicketAmountErrorMessage.getText();
     }
 
     public Ticket getBookedTicketInformation() {

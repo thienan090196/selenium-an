@@ -13,5 +13,6 @@ public class ErrorMessage {
     public static final String CONFIRM_PASSWORD_NOT_MATCH_PASSWORD = "The two passwords do not match";
     public static final String INVALID_PID_LENGTH = "Invalid ID length";
     public static final String NO_TICKET_FOUND = "Sorry, can't find any results that match your filters.\nPlease change the filters and try again.";
-
+    public static final String BOOK_TICKET_GENERAL_MESSAGE = "There're errors in the form. Please correct the errors and try again.";
+    public static final String INVALID_TICKET_AMOUNT = "You have booked 10 tickets. You can book no more.";
 }

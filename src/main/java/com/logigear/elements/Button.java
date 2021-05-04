@@ -11,5 +11,4 @@ public class Button extends BaseElement {
     public void submit() {
         findElement().submit();
     }
-
 }

@@ -35,6 +35,10 @@ public class BaseElement {
         return findElement().getText();
     }
 
+    public int getTotalElements() {
+        return findElements().size();
+    }
+
     public boolean isDisplayed() {
         try {
             return findElement().isDisplayed();

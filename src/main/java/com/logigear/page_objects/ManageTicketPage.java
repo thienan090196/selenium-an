@@ -5,6 +5,7 @@ import com.logigear.elements.Dropdown;
 import com.logigear.elements.Label;
 import com.logigear.elements.TextBox;
 import com.logigear.helpers.DriverHelper;
+import com.logigear.models.Ticket;
 import org.openqa.selenium.By;
 
 public class ManageTicketPage extends BasePage {
@@ -26,13 +27,14 @@ public class ManageTicketPage extends BasePage {
         DriverHelper.acceptAlert();
     }
 
-    public void applyFilter(String departStation, String arriveStation, String departDate, String status) {
-        this.ddlDepartStation.selectDropdownByText(departStation);
-        this.ddlArriveStation.selectDropdownByText(arriveStation);
-        this.txtDepartDate.enterText(departDate);
-        this.ddlStatus.selectDropdownByText(status);
+    public int getFilterResult(Ticket ticket) {
+        this.ddlDepartStation.selectDropdownByText(ticket.getDepartFrom());
+        this.ddlArriveStation.selectDropdownByText(ticket.getArriveAt());
+        this.txtDepartDate.enterText(ticket.getDepartDate());
+        this.ddlStatus.selectDropdownByText(ticket.getStatus());
         this.btnApplyFilter.scrollToView();
         this.btnApplyFilter.click();
+        return this.btnCancel.getTotalElements();
     }
 
     public String getFilterErrorMessage() {
