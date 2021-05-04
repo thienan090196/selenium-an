@@ -6,7 +6,7 @@ import org.openqa.selenium.By;
 public class HomePage extends BasePage {
 
     //Elements
-    public final Label lblWelcomeMessage = new Label(By.cssSelector(".account strong"));
+    public final Label lblWelcomeMessage = new Label(By.cssSelector(".account"));
 
     //Methods
     public String getWelcomeMessage() {

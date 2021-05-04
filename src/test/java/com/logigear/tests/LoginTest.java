@@ -21,6 +21,6 @@ public class LoginTest extends BaseTest {
 
         String actualResult = homePage.getWelcomeMessage();
         String expectedResult = "Welcome " + account.getEmail();
-        Assert.assertEquals(actualResult, expectedResult, actualResult + " is not matched with " + expectedResult);
+        Assert.assertEquals(actualResult, expectedResult);
     }
 }

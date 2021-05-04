@@ -8,8 +8,8 @@ import org.openqa.selenium.By;
 public class LoginPage extends BasePage {
 
     //Elements
-    private final TextBox txtEmail = new TextBox(By.cssSelector("input#username"));
-    private final TextBox txtPassword = new TextBox(By.cssSelector("input#password"));
+    private final TextBox txtEmail = new TextBox(By.id("username"));
+    private final TextBox txtPassword = new TextBox(By.id("password"));
     private final Button btnLogin = new Button(By.cssSelector("input[title='Login']"));
 
     //Methods
