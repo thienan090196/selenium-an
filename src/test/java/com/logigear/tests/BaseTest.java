@@ -13,13 +13,13 @@ public class BaseTest {
     @BeforeMethod
     @Parameters("browser")
     public void setUp(@Optional("chrome") String browser) {
-        DriverHelper.getInstance().createDriver(DriverType.valueOf(browser.toUpperCase()));
+        DriverHelper.createDriver(DriverType.valueOf(browser.toUpperCase()));
         DriverHelper.setWindowSize(Constant.DEFAULT_SCREEN_WIDTH, Constant.DEFAULT_SCREEN_HEIGHT);
         DriverHelper.navigateToUrl(Constant.RAILWAY_URL);
     }
 
     @AfterMethod
     public void tearDown() {
-        DriverHelper.getInstance().quitDriver();
+        DriverHelper.quitDriver();
     }
 }
