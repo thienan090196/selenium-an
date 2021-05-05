@@ -1,6 +1,7 @@
 package com.logigear.tests;
 
 import com.logigear.helpers.Constant;
+import com.logigear.helpers.DataHelper;
 import com.logigear.helpers.ErrorMessage;
 import com.logigear.models.Account;
 import com.logigear.page_objects.HomePage;
@@ -28,6 +29,17 @@ public class LoginTest extends BaseTest {
     @Test(description = "User cannot login with blank 'Username' text box")
     public void TC02() {
         account = new Account("", Constant.PASSWORD);
+        homePage.goToLoginPage();
+        loginPage.login(account);
+
+        String actualResult = loginPage.getErrorMessage();
+        String expectedResult = ErrorMessage.LOGIN_ERROR;
+        Assert.assertEquals(actualResult, expectedResult, "Error message fails to display!");
+    }
+
+    @Test(description = "User cannot log into Railway with invalid password ")
+    public void TC03() {
+        account = new Account(Constant.EMAIL, DataHelper.getRandomPassword());
         homePage.goToLoginPage();
         loginPage.login(account);
 
