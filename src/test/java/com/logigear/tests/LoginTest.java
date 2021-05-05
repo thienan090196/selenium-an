@@ -1,6 +1,7 @@
 package com.logigear.tests;
 
 import com.logigear.helpers.Constant;
+import com.logigear.helpers.ErrorMessage;
 import com.logigear.models.Account;
 import com.logigear.page_objects.HomePage;
 import com.logigear.page_objects.LoginPage;
@@ -22,5 +23,16 @@ public class LoginTest extends BaseTest {
         String actualResult = homePage.getWelcomeMessage();
         String expectedResult = "Welcome " + account.getEmail();
         Assert.assertEquals(actualResult, expectedResult, "Welcome message fails to display!");
+    }
+
+    @Test(description = "User cannot login with blank 'Username' text box")
+    public void TC02() {
+        account = new Account("", Constant.PASSWORD);
+        homePage.goToLoginPage();
+        loginPage.login(account);
+
+        String actualResult = loginPage.getErrorMessage();
+        String expectedResult = ErrorMessage.LOGIN_ERROR;
+        Assert.assertEquals(actualResult, expectedResult, "Error message fails to display!");
     }
 }
