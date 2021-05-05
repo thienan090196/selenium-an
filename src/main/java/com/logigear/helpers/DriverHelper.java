@@ -12,28 +12,15 @@ import java.util.concurrent.TimeUnit;
 
 public class DriverHelper {
 
-    private static final DriverHelper instance = new DriverHelper();
+    public static ThreadLocal<WebDriver> driver;
 
-    ThreadLocal<WebDriver> driver = new ThreadLocal<>();
-
-    private DriverHelper() {
-
-    }
-
-    public static DriverHelper getInstance() {
-        return instance;
-    }
-
-    public static void navigateToUrl(String url) {
-        getInstance().getDriver().get(url);
-    }
-
-    public WebDriver getDriver() {
+    public static WebDriver getDriver() {
         return driver.get();
     }
 
-    public void createDriver(DriverType driverType) {
+    public static void createDriver(DriverType driverType) {
         WebDriver webDriver;
+        driver = new ThreadLocal<>();
         switch (driverType) {
             case CHROME:
                 WebDriverManager.chromedriver().setup();
@@ -53,15 +40,23 @@ public class DriverHelper {
     }
 
     public static void setWindowSize(int width, int height) {
-        getInstance().getDriver().manage().window().setSize(new Dimension(width, height));
+        getDriver().manage().window().setSize(new Dimension(width, height));
     }
 
     public static void maximizeWindow() {
-        getInstance().getDriver().manage().window().maximize();
+        getDriver().manage().window().maximize();
     }
 
-    public void quitDriver() {
-        driver.get().quit();
+    public static void navigateToUrl(String url) {
+        getDriver().get(url);
+    }
+
+    public static String getTitle() {
+        return getDriver().getTitle().trim();
+    }
+
+    public static void quitDriver() {
+        getDriver().quit();
         driver.remove();
     }
 }

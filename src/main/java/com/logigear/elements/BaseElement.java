@@ -20,11 +20,11 @@ public class BaseElement {
     }
 
     public WebElement findElement() {
-        return DriverHelper.getInstance().getDriver().findElement(locator);
+        return DriverHelper.getDriver().findElement(locator);
     }
 
     public List<WebElement> findElements() {
-        return DriverHelper.getInstance().getDriver().findElements(locator);
+        return DriverHelper.getDriver().findElements(locator);
     }
 
     public void click() {
@@ -52,17 +52,17 @@ public class BaseElement {
     }
 
     public void scrollToView() {
-        JavascriptExecutor js = (JavascriptExecutor) DriverHelper.getInstance().getDriver();
+        JavascriptExecutor js = (JavascriptExecutor) DriverHelper.getDriver();
         js.executeScript("arguments[0].scrollIntoView(true);", findElement());
     }
 
     public void waitForAlertPresent() {
-        WebDriverWait wait = new WebDriverWait(DriverHelper.getInstance().getDriver(), Constant.EXPLICIT_ELEMENT_WAIT_TIME);
+        WebDriverWait wait = new WebDriverWait(DriverHelper.getDriver(), Constant.EXPLICIT_ELEMENT_WAIT_TIME);
         wait.until(ExpectedConditions.alertIsPresent());
     }
 
     public void waitForElementVisible() {
-        WebDriverWait wait = new WebDriverWait(DriverHelper.getInstance().getDriver(), Constant.EXPLICIT_ELEMENT_WAIT_TIME);
+        WebDriverWait wait = new WebDriverWait(DriverHelper.getDriver(), Constant.EXPLICIT_ELEMENT_WAIT_TIME);
         wait.until(ExpectedConditions.visibilityOf(findElement()));
     }
 }
