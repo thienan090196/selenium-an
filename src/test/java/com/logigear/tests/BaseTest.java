@@ -12,12 +12,8 @@ public class BaseTest {
 
     @BeforeMethod
     @Parameters("browser")
-    public void setUp(@Optional String browser) {
-        if (browser != null) {
-            DriverHelper.getInstance().createDriver(DriverType.valueOf(browser.toUpperCase()));
-        } else {
-            DriverHelper.getInstance().createDriver(DriverType.CHROME);
-        }
+    public void setUp(@Optional("chrome") String browser) {
+        DriverHelper.getInstance().createDriver(DriverType.valueOf(browser.toUpperCase()));
         DriverHelper.setWindowSize(Constant.DEFAULT_SCREEN_WIDTH, Constant.DEFAULT_SCREEN_HEIGHT);
         DriverHelper.navigateToUrl(Constant.RAILWAY_URL);
     }
