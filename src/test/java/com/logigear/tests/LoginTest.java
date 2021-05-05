@@ -22,6 +22,6 @@ public class LoginTest extends BaseTest {
 
         String actualResult = loginPage.getErrorMessage();
         String expectedResult = ErrorMessage.LOGIN_ERROR;
-        Assert.assertEquals(actualResult, expectedResult);
+        Assert.assertEquals(actualResult, expectedResult, "Error message fails to display!");
     }
 }
