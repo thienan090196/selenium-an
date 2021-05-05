@@ -13,7 +13,7 @@ public class LoginTest extends BaseTest {
     private HomePage homePage = new HomePage();
     private LoginPage loginPage = new LoginPage();
     private Account account;
-    
+
     @Test(description = "User can log into Railway with valid username and password")
     public void TC01() {
         account = new Account(Constant.EMAIL, Constant.PASSWORD);
