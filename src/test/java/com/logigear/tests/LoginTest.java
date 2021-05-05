@@ -27,13 +27,12 @@ public class LoginTest extends BaseTest {
 
     @Test(description = "User cannot login with blank 'Username' text box")
     public void TC02() {
-        account = new Account(Constant.BLANK_STRING, Constant.PASSWORD);
+        account = new Account("", Constant.PASSWORD);
         homePage.goToLoginPage();
         loginPage.login(account);
 
         String actualResult = loginPage.getErrorMessage();
         String expectedResult = ErrorMessage.LOGIN_ERROR;
         Assert.assertEquals(actualResult, expectedResult, "Error message fails to display!");
-        Assert.assertEquals(actualResult, expectedResult);
     }
 }

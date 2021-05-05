@@ -35,14 +35,6 @@
             <artifactId>webdrivermanager</artifactId>
             <version>3.8.1</version>
         </dependency>
-<<<<<<< HEAD
-=======
-        <dependency>
-            <groupId>org.seleniumhq.selenium</groupId>
-            <artifactId>selenium-support</artifactId>
-            <version>3.141.59</version>
-        </dependency>
->>>>>>> 5a72ec0 (TC02 - User cannot login with blank 'Username' text box)
     </dependencies>
 
     <build>
