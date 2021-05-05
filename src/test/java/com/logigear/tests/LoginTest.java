@@ -21,6 +21,6 @@ public class LoginTest extends BaseTest {
 
         String actualResult = homePage.getWelcomeMessage();
         String expectedResult = "Welcome " + account.getEmail();
-        Assert.assertEquals(actualResult, expectedResult);
+        Assert.assertEquals(actualResult, expectedResult, "Welcome message fails to display!");
     }
 }
