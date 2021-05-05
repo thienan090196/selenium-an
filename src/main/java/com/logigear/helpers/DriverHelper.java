@@ -30,7 +30,7 @@ public class DriverHelper {
                 webDriver = new FirefoxDriver();
                 break;
             default:
-                WebDriverManager.chromedriver().setup();
+                WebDriverManager.edgedriver().setup();
                 webDriver = new EdgeDriver();
                 break;
         }
