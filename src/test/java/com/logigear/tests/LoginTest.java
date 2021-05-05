@@ -2,6 +2,7 @@ package com.logigear.tests;
 
 import com.logigear.helpers.Constant;
 import com.logigear.helpers.ErrorMessage;
+import com.logigear.helpers.DriverHelper;
 import com.logigear.models.Account;
 import com.logigear.page_objects.HomePage;
 import com.logigear.page_objects.LoginPage;
@@ -43,5 +44,16 @@ public class LoginTest extends BaseTest {
 
         String actualResult = loginPage.getErrorMessage();
         Assert.assertEquals(actualResult, ErrorMessage.LOGIN_ERROR, "Error message fails to display!");
+    }
+
+    @Test(description = "User is redirected to Book ticket page after logging in")
+    public void TC04() {
+        account = new Account(Constant.EMAIL, Constant.PASSWORD);
+        homePage.goToBookTicketPage();
+        loginPage.login(account);
+
+        String actualResult = DriverHelper.getTitle();
+        String expectedResult = "Safe Railway - Book Ticket";
+        Assert.assertEquals(actualResult, expectedResult, "Book Ticket Page fails to display!");
     }
 }
