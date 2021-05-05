@@ -12,7 +12,7 @@ import java.util.concurrent.TimeUnit;
 
 public class DriverHelper {
 
-    public static ThreadLocal<WebDriver> driver;
+    public static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
 
     public static WebDriver getDriver() {
         return driver.get();
@@ -20,7 +20,6 @@ public class DriverHelper {
 
     public static void createDriver(DriverType driverType) {
         WebDriver webDriver;
-        driver = new ThreadLocal<>();
         switch (driverType) {
             case CHROME:
                 WebDriverManager.chromedriver().setup();
