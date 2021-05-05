@@ -54,6 +54,6 @@ public class LoginTest extends BaseTest {
 
         String actualResult = DriverHelper.getTitle();
         String expectedResult = "Safe Railway - Book Ticket";
-        Assert.assertEquals(actualResult, expectedResult, "Book Ticket Page fails to display!");
+        Assert.assertEquals(actualResult, expectedResult, "Book ticket page fails to display!");
     }
 }
