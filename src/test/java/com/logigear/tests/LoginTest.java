@@ -32,7 +32,16 @@ public class LoginTest extends BaseTest {
         loginPage.login(account);
 
         String actualResult = loginPage.getErrorMessage();
-        String expectedResult = ErrorMessage.LOGIN_ERROR;
-        Assert.assertEquals(actualResult, expectedResult, "Error message fails to display!");
+        Assert.assertEquals(actualResult, ErrorMessage.LOGIN_ERROR, "Error message fails to display!");
+    }
+
+    @Test(description = "User cannot log into Railway with invalid password ")
+    public void TC03() {
+        account = new Account(Constant.EMAIL, "abc@123");
+        homePage.goToLoginPage();
+        loginPage.login(account);
+
+        String actualResult = loginPage.getErrorMessage();
+        Assert.assertEquals(actualResult, ErrorMessage.LOGIN_ERROR, "Error message fails to display!");
     }
 }
