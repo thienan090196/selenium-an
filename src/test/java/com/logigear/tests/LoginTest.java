@@ -33,7 +33,7 @@ public class LoginTest extends BaseTest {
         homePage.goToLoginPage();
         loginPage.login(account);
 
-        String actualResult = loginPage.getErrorMessage();
+        String actualResult = loginPage.getFormErrorMessage();
         Assert.assertEquals(actualResult, ErrorMessage.LOGIN_FORM_ERROR, "Error message fails to display!");
     }
 
@@ -43,7 +43,7 @@ public class LoginTest extends BaseTest {
         homePage.goToLoginPage();
         loginPage.login(account);
 
-        String actualResult = loginPage.getErrorMessage();
+        String actualResult = loginPage.getFormErrorMessage();
         Assert.assertEquals(actualResult, ErrorMessage.INVALID_EMAIL_OR_PASSWORD, "Error message fails to display!");
     }
 

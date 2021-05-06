@@ -22,7 +22,7 @@ public class LoginPage extends BasePage {
         this.btnLogin.click();
     }
 
-    public String getErrorMessage() {
+    public String getFormErrorMessage() {
         return this.lblFormErrorMessage.getText();
     }
 }
