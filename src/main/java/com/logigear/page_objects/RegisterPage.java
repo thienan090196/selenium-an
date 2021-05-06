@@ -16,6 +16,8 @@ public class RegisterPage extends BasePage {
     private final Button btnRegister = new Button(By.cssSelector("input[title='Register']"));
     private final Label lblSuccessMessage = new Label(By.id("content"));
     private final Label lblFormErrorMessage = new Label(By.className("message"));
+    private final Label lblPasswordErrorMessage = new Label(By.cssSelector("[for=password].validation-error"));
+    private final Label lblPidErrorMessage = new Label(By.cssSelector("[for=pid].validation-error"));
 
     //Methods
     public void register(Account account) {
@@ -33,5 +35,13 @@ public class RegisterPage extends BasePage {
 
     public String getFormErrorMessage() {
         return this.lblFormErrorMessage.getText();
+    }
+
+    public String getPasswordErrorMessage() {
+        return this.lblPasswordErrorMessage.getText();
+    }
+
+    public String getPidErrorMessage() {
+        return this.lblPidErrorMessage.getText();
     }
 }

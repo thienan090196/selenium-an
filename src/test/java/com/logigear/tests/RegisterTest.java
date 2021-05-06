@@ -15,7 +15,6 @@ public class RegisterTest extends BaseTest {
     private RegisterPage registerPage = new RegisterPage();
     private Account account;
 
-
     @Test(description = "User can create new account")
     public void TC01() {
         account = new Account(DataHelper.getRandomEmail(), DataHelper.getRandomPassword(), DataHelper.getRandomPid());
@@ -35,5 +34,19 @@ public class RegisterTest extends BaseTest {
 
         String actualErrorMessage = registerPage.getFormErrorMessage();
         Assert.assertEquals(actualErrorMessage, ErrorMessage.EMAIL_IS_EXISTED, "Error message fails to display!");
+    }
+
+    @Test(description = "User cannot create account while password and PID fields are empty")
+    public void TC03() {
+        account = new Account(DataHelper.getRandomEmail(), "", "");
+        homePage.goToRegisterPage();
+        registerPage.register(account);
+
+        String actualFormErrorMessage = registerPage.getFormErrorMessage();
+        String actualPasswordErrorMessage = registerPage.getPasswordErrorMessage();
+        String actualPidErrorMessage = registerPage.getPidErrorMessage();
+        Assert.assertEquals(actualFormErrorMessage, ErrorMessage.REGISTER_FORM_ERROR, "Form error fails to display!");
+        Assert.assertEquals(actualPasswordErrorMessage, ErrorMessage.INVALID_PASSWORD_LENGTH, "Password error fails to display!");
+        Assert.assertEquals(actualPidErrorMessage, ErrorMessage.INVALID_PID_LENGTH, "Pid error fails to display!");
     }
 }
