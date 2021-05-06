@@ -12,7 +12,7 @@ public class LoginPage extends BasePage {
     private final TextBox txtEmail = new TextBox(By.id("username"));
     private final TextBox txtPassword = new TextBox(By.id("password"));
     private final Button btnLogin = new Button(By.cssSelector("input[title='Login']"));
-    private final Label lblErrorMessage = new Label(By.className("message"));
+    private final Label lblFormErrorMessage = new Label(By.className("message"));
 
     //Methods
     public void login(Account account) {
@@ -23,6 +23,6 @@ public class LoginPage extends BasePage {
     }
 
     public String getErrorMessage() {
-        return this.lblErrorMessage.getText();
+        return this.lblFormErrorMessage.getText();
     }
 }
