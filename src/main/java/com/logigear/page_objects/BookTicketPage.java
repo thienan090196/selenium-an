@@ -18,7 +18,7 @@ public class BookTicketPage extends BasePage {
     private final Button btnBookTicket = new Button(By.cssSelector("input[value='Book ticket']"));
     private final Label lblSuccessMessage = new Label(By.cssSelector("#content h1"));
     private final Table tblTicketInformation = new Table(By.cssSelector(".MyTable.WideTable"));
-    private final String dynamicTicketValueXpath = "//td[count(//th[text()='%s']/preceding-sibling::th)+1]";
+    private final String dynamicTicketInfoLocator = "//td[count(//th[text()='%s']/preceding-sibling::th)+1]";
 
     //Methods
     public void bookTicket(Ticket ticket) {
@@ -37,11 +37,11 @@ public class BookTicketPage extends BasePage {
 
     public Ticket getBookedTicketInformation() {
         Ticket ticket = new Ticket();
-        ticket.setDepartFrom(this.tblTicketInformation.getCellValueByHeader(this.dynamicTicketValueXpath, "Depart Station"));
-        ticket.setArriveAt(this.tblTicketInformation.getCellValueByHeader(this.dynamicTicketValueXpath, "Arrive Station"));
-        ticket.setSeatType(this.tblTicketInformation.getCellValueByHeader(this.dynamicTicketValueXpath, "Seat Type"));
-        ticket.setDepartDate(this.tblTicketInformation.getCellValueByHeader(this.dynamicTicketValueXpath, "Depart Date"));
-        ticket.setTicketAmount(Integer.parseInt(this.tblTicketInformation.getCellValueByHeader(this.dynamicTicketValueXpath, "Amount")));
+        ticket.setDepartFrom(this.tblTicketInformation.getCellValueByHeader(this.dynamicTicketInfoLocator, "Depart Station"));
+        ticket.setArriveAt(this.tblTicketInformation.getCellValueByHeader(this.dynamicTicketInfoLocator, "Arrive Station"));
+        ticket.setSeatType(this.tblTicketInformation.getCellValueByHeader(this.dynamicTicketInfoLocator, "Seat Type"));
+        ticket.setDepartDate(this.tblTicketInformation.getCellValueByHeader(this.dynamicTicketInfoLocator, "Depart Date"));
+        ticket.setTicketAmount(Integer.parseInt(this.tblTicketInformation.getCellValueByHeader(this.dynamicTicketInfoLocator, "Amount")));
         return ticket;
     }
 }
