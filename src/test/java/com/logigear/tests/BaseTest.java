@@ -12,7 +12,7 @@ public class BaseTest {
 
     @BeforeMethod
     @Parameters("browser")
-    public void setUp(@Optional("firefox") String browser) {
+    public void setUp(@Optional("chrome") String browser) {
         DriverHelper.createDriver(DriverType.valueOf(browser.toUpperCase()));
         DriverHelper.maximizeWindow();
         DriverHelper.navigateToUrl(Constant.RAILWAY_URL);
