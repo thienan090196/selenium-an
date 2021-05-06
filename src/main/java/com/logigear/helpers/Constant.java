@@ -9,4 +9,5 @@ public class Constant {
     public static final int DEFAULT_SCREEN_HEIGHT = 768;
     public static final int IMPLICITLY_WAIT_TIME = 5;
     public static final int EXPLICIT_ELEMENT_WAIT_TIME = 10;
+    public static final String DATE_FORMAT = "M/d/yyyy";
 }
