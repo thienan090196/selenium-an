@@ -3,6 +3,7 @@ package com.logigear.tests;
 import com.logigear.helpers.Constant;
 import com.logigear.helpers.ErrorMessage;
 import com.logigear.models.Account;
+import com.logigear.page_objects.BookTicketPage;
 import com.logigear.page_objects.HomePage;
 import com.logigear.page_objects.LoginPage;
 import org.testng.Assert;
@@ -12,6 +13,7 @@ public class LoginTest extends BaseTest {
 
     private HomePage homePage = new HomePage();
     private LoginPage loginPage = new LoginPage();
+    private BookTicketPage bookTicketPage = new BookTicketPage();
     private Account account;
 
     @Test(description = "User can log into Railway with valid username and password")
@@ -31,8 +33,8 @@ public class LoginTest extends BaseTest {
         homePage.goToLoginPage();
         loginPage.login(account);
 
-        String actualResult = loginPage.getErrorMessage();
-        Assert.assertEquals(actualResult, ErrorMessage.LOGIN_ERROR, "Error message fails to display!");
+        String actualResult = loginPage.getFormErrorMessage();
+        Assert.assertEquals(actualResult, ErrorMessage.LOGIN_FORM_ERROR, "Error message fails to display!");
     }
 
     @Test(description = "User cannot log into Railway with invalid password ")
@@ -41,7 +43,18 @@ public class LoginTest extends BaseTest {
         homePage.goToLoginPage();
         loginPage.login(account);
 
-        String actualResult = loginPage.getErrorMessage();
-        Assert.assertEquals(actualResult, ErrorMessage.LOGIN_ERROR, "Error message fails to display!");
+        String actualResult = loginPage.getFormErrorMessage();
+        Assert.assertEquals(actualResult, ErrorMessage.INVALID_EMAIL_OR_PASSWORD, "Error message fails to display!");
+    }
+
+    @Test(description = "User is redirected to Book ticket page after logging in")
+    public void TC04() {
+        account = new Account(Constant.EMAIL, Constant.PASSWORD);
+        homePage.goToBookTicketPage();
+        loginPage.login(account);
+
+        String actualResult = bookTicketPage.getPageHeader();
+        String expectedResult = "Book ticket";
+        Assert.assertEquals(actualResult, expectedResult, "Book ticket page fails to display!");
     }
 }
