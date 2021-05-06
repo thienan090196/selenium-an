@@ -12,6 +12,7 @@ public class BasePage {
     private final Button btnBookTicket = new Button(By.cssSelector("a[href='/Page/BookTicketPage.cshtml']"));
     private final Label lblPageHeader = new Label(By.cssSelector("#content h1"));
     private final Button btnLogout = new Button(By.cssSelector("a[href='/Account/Logout']"));
+    private final Button btnRegister = new Button(By.cssSelector("a[href='/Account/Register.cshtml']"));
 
     //Methods
     public void goToHomePage() {
@@ -36,5 +37,9 @@ public class BasePage {
 
     public boolean isLogoutTabDisplayed() {
         return this.btnLogout.isDisplayed();
+    }
+
+    public void goToRegisterPage() {
+        this.btnRegister.click();
     }
 }
