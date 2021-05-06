@@ -30,8 +30,8 @@ public class DriverHelper {
                 webDriver = new FirefoxDriver();
                 break;
             default:
-                WebDriverManager.edgedriver().setup();
-                webDriver = new EdgeDriver();
+                WebDriverManager.chromedriver().setup();
+                webDriver = new ChromeDriver();
                 break;
         }
         webDriver.manage().timeouts().implicitlyWait(Constant.IMPLICITLY_WAIT_TIME, TimeUnit.SECONDS);
