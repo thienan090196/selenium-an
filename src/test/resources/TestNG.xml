@@ -4,12 +4,14 @@
         <parameter name="browser" value="chrome"/>
         <classes>
             <class name="com.logigear.tests.LoginTest"/>
+            <class name="com.logigear.tests.RegisterTest"/>
         </classes>
     </test>
     <test name="Firefox Test">
         <parameter name="browser" value="firefox"/>
         <classes>
             <class name="com.logigear.tests.LoginTest"/>
+            <class name="com.logigear.tests.RegisterTest"/>
         </classes>
     </test>
 </suite>
