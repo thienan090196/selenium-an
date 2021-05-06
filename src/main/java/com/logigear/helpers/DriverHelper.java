@@ -31,7 +31,7 @@ public class DriverHelper {
                 break;
             default:
                 WebDriverManager.chromedriver().setup();
-                webDriver = new EdgeDriver();
+                webDriver = new ChromeDriver();
                 break;
         }
         webDriver.manage().timeouts().implicitlyWait(Constant.IMPLICITLY_WAIT_TIME, TimeUnit.SECONDS);

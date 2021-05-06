@@ -57,4 +57,17 @@ public class LoginTest extends BaseTest {
         String expectedResult = "Book ticket";
         Assert.assertEquals(actualResult, expectedResult, "Book ticket page fails to display!");
     }
+
+    @Test(description = "User is redirected to Home page after logging out")
+    public void TC06() {
+        account = new Account(Constant.EMAIL, Constant.PASSWORD);
+        homePage.goToLoginPage();
+        loginPage.login(account);
+        homePage.logout();
+
+        String actualResult = homePage.getPageHeader();
+        String expectedResult = "Welcome to Safe Railway";
+        Assert.assertEquals(actualResult, expectedResult, "Home page fails to display!");
+        Assert.assertFalse(homePage.isLogoutTabDisplayed(), "Logout tab fails to disappear!");
+    }
 }
