@@ -15,6 +15,7 @@ public class RegisterPage extends BasePage {
     private final TextBox txtPid = new TextBox(By.id("pid"));
     private final Button btnRegister = new Button(By.cssSelector("input[title='Register']"));
     private final Label lblSuccessMessage = new Label(By.id("content"));
+    private final Label lblFormErrorMessage = new Label(By.className("message"));
 
     //Methods
     public void register(Account account) {
@@ -28,5 +29,9 @@ public class RegisterPage extends BasePage {
 
     public String getSuccessMessage() {
         return this.lblSuccessMessage.getText();
+    }
+
+    public String getFormErrorMessage() {
+        return this.lblFormErrorMessage.getText();
     }
 }
