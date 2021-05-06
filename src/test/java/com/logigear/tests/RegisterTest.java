@@ -19,8 +19,8 @@ public class RegisterTest extends BaseTest {
         homePage.goToRegisterPage();
         registerPage.register(account);
 
-        String actualResult = registerPage.getSuccessMessage();
-        String expectedResult = "You're here";
-        Assert.assertEquals(actualResult, expectedResult, "Success message fails to display!");
+        String actualSuccessMessage = registerPage.getSuccessMessage();
+        String expectedSuccessMessage = "You're here";
+        Assert.assertEquals(actualSuccessMessage, expectedSuccessMessage, "Success message fails to display!");
     }
 }
