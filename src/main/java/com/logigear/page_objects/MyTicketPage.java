@@ -17,7 +17,7 @@ public class MyTicketPage extends BasePage {
         DriverHelper.acceptAlert();
     }
 
-    public int getTicketCount() {
+    public int getTotalTicket() {
         return this.btnCancel.getElementCount();
     }
 }

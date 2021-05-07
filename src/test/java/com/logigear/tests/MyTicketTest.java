@@ -27,9 +27,9 @@ public class MyTicketTest extends BaseTest {
         Ticket ticket = new Ticket(DataHelper.getDateFromToday(5), "Phan Thiết", "Đà Nẵng", "Soft seat", 1);
         bookTicketPage.bookTicket(ticket);
         homePage.goToMyTicketPage();
-        int getTicketCount = myTicketPage.getTicketCount();
+        int getTicketCount = myTicketPage.getTotalTicket();
         myTicketPage.deleteTicket();
-        int actualTicketAmount = myTicketPage.getTicketCount();
+        int actualTicketAmount = myTicketPage.getTotalTicket();
         int expectedTicketAmount = getTicketCount - 1;
 
         Assert.assertEquals(actualTicketAmount, expectedTicketAmount, "Ticket deleted unsuccessfully!");
