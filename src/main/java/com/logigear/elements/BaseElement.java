@@ -27,6 +27,10 @@ public class BaseElement {
         return DriverHelper.getDriver().findElements(locator);
     }
 
+    public int getElementCount() {
+        return findElements().size();
+    }
+
     public void click() {
         findElement().click();
     }

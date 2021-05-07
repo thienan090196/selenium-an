@@ -15,10 +15,9 @@ public class MyTicketPage extends BasePage {
         this.btnCancel.click();
         DriverHelper.waitForAlertPresent();
         DriverHelper.acceptAlert();
-        this.btnCancel.waitForElementInVisible();
     }
 
-    public boolean isTicketDisplayed() {
-        return this.btnCancel.isDisplayed();
+    public int getTicketCount() {
+        return this.btnCancel.getElementCount();
     }
 }
