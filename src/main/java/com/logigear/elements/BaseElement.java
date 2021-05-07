@@ -56,13 +56,8 @@ public class BaseElement {
         js.executeScript("arguments[0].scrollIntoView(true);", findElement());
     }
 
-    public void waitForAlertPresent() {
+    public void waitForElementInVisible() {
         WebDriverWait wait = new WebDriverWait(DriverHelper.getDriver(), Constant.EXPLICIT_ELEMENT_WAIT_TIME);
-        wait.until(ExpectedConditions.alertIsPresent());
-    }
-
-    public void waitForElementVisible() {
-        WebDriverWait wait = new WebDriverWait(DriverHelper.getDriver(), Constant.EXPLICIT_ELEMENT_WAIT_TIME);
-        wait.until(ExpectedConditions.visibilityOf(findElement()));
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(locator));
     }
 }

@@ -11,6 +11,7 @@ public class BasePage {
     private final Button btnLogin = new Button(By.cssSelector("a[href='/Account/Login.cshtml']"));
     private final Button btnRegister = new Button(By.cssSelector("a[href='/Account/Register.cshtml']"));
     private final Button btnBookTicket = new Button(By.cssSelector("a[href='/Page/BookTicketPage.cshtml']"));
+    private final Button btnMyTicket = new Button(By.cssSelector("a[href='/Page/ManageTicket.cshtml']"));
     private final Label lblPageHeader = new Label(By.cssSelector("#content h1"));
     private final Button btnLogout = new Button(By.cssSelector("a[href='/Account/Logout']"));
 
@@ -29,6 +30,10 @@ public class BasePage {
 
     public void goToBookTicketPage() {
         this.btnBookTicket.click();
+    }
+
+    public void goToMyTicketPage() {
+        this.btnMyTicket.click();
     }
 
     public String getPageHeader() {

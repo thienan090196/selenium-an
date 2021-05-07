@@ -7,6 +7,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.concurrent.TimeUnit;
 
@@ -52,6 +54,15 @@ public class DriverHelper {
 
     public static String getTitle() {
         return getDriver().getTitle().trim();
+    }
+
+    public static void waitForAlertPresent() {
+        WebDriverWait wait = new WebDriverWait(getDriver(), Constant.EXPLICIT_ELEMENT_WAIT_TIME);
+        wait.until(ExpectedConditions.alertIsPresent());
+    }
+
+    public static void acceptAlert() {
+        getDriver().switchTo().alert().accept();
     }
 
     public static void quitDriver() {
