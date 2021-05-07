@@ -1,6 +1,8 @@
 package com.logigear.helpers;
 
 import com.github.javafaker.Faker;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class DataHelper {
 
@@ -14,5 +16,10 @@ public class DataHelper {
 
     public static String getRandomPid() {
         return new Faker().regexify("[0-9]{8,20}");
+    }
+
+    public static String getDateFromToday(int days) {
+        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern(Constant.DATE_FORMAT);
+        return dateTimeFormatter.format(LocalDateTime.now().plusDays(days));
     }
 }
