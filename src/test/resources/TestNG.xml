@@ -6,6 +6,7 @@
             <class name="com.logigear.tests.LoginTest"/>
             <class name="com.logigear.tests.RegisterTest"/>
             <class name="com.logigear.tests.BookTicketTest"/>
+            <class name="com.logigear.tests.MyTicketTest"/>
         </classes>
     </test>
     <test name="Firefox Test">
@@ -14,6 +15,7 @@
             <class name="com.logigear.tests.LoginTest"/>
             <class name="com.logigear.tests.RegisterTest"/>
             <class name="com.logigear.tests.BookTicketTest"/>
+            <class name="com.logigear.tests.MyTicketTest"/>
         </classes>
     </test>
 </suite>
