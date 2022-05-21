@@ -14,6 +14,7 @@ public class BasePage {
     private final Button btnMyTicket = new Button(By.cssSelector("a[href='/Page/ManageTicket.cshtml']"));
     private final Label lblPageHeader = new Label(By.cssSelector("#content h1"));
     private final Button btnLogout = new Button(By.cssSelector("a[href='/Account/Logout']"));
+    private final Button btnChangePassword = new Button(By.cssSelector("a[href='/Account/ChangePassword.cshtml']"));
 
     //Methods
     public void goToHomePage() {
@@ -46,5 +47,9 @@ public class BasePage {
 
     public boolean isLogoutTabDisplayed() {
         return this.btnLogout.isDisplayed();
+    }
+
+    public void goToChangePasswordPage() {
+        this.btnChangePassword.click();
     }
 }
